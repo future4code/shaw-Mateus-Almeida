@@ -42,14 +42,20 @@ const seuNome = prompt("digite seu nome")
 
     //3
 
-   let listaDeTarefas=[]
-  listaDeTarefas =[prompt("digite 1 tarefa"), prompt("digite a tarefa 2"), prompt("digite a tarefa 3")]
-console.log(listaDeTarefas)
-let tarefaFeita = prompt("digite o indice da tarefa feita")
-listaDeTarefas.splice(tarefaFeita, 1)
-
-console.log(listaDeTarefas)
+   const listaTarefas =[]
+ let respostaUm = prompt("me fale 1 coisa que voce fez hoje")
+    let respostaDois = prompt("me fale segunda que voce fez hoje")
+      let respostaTres = prompt("me fale a terceira coisa fez hoje")
+        listaTarefas.push(respostaUm)
+       listaTarefas.push(respostaDois)
+    listaTarefas.push(respostaTres)
+    console.log(listaTarefas)
+    let respostaUsuario = prompt("me fale algo de 1 a 3 para eliminar") 
+  
+   listaTarefas.splice((respostaUsuario -1), 1)
    
+   console.log(listaTarefas)
+
    
    
   
