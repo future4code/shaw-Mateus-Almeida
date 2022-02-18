@@ -13,7 +13,7 @@ function soma(num1, num2) {
   
   console.log(mensagem)
   }
-  ////
+  ////////
   
   // EXERCÍCIOS PARA FAZER ------------------------------------------------------------------
   
