@@ -29,8 +29,8 @@
                          }
                            let somaCartaPc = pc[0].valor + pc[1].valor
                            let somaCartausuario = usuario[0].valor + usuario[1].valor           
-                       console.log(` carta ${pc[0].texto} , valor ${pc[0].valor}  valor soma é ${somaCartaPc}`)
-                     console.log(`carta ${usuario[0].texto}, valor${usuario[0].valor}, valor soma e ${somaCartausuario}`)
+                       console.log(` carta ${pc[0].texto} , valor ${pc[1].valor}  valor soma é ${somaCartaPc}`)
+                     console.log(`carta ${usuario[0].texto}, valor${usuario[1].valor}, valor soma e ${somaCartausuario}`)
                    if (somaCartaPc > somaCartausuario) {
                  console.log(`pc ganhou`)
                 }  else if (somaCartausuario > somaCartaPc) {
@@ -38,3 +38,5 @@
             }else if (somaCartausuario === somaCartaPc) {
           console.log(`empate`)
         }
+          
+ 
