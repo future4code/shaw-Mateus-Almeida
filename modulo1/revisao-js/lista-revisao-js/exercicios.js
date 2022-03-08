@@ -38,39 +38,44 @@ function retornaArrayOrdenado(array) {
 
 
 
-
-
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
 const novoArray = array.filter((numero) => {
     return numero % 2 === 0;
   });
   return novoArray;
+/* outra forma com calback 
+const comparacao = (numero) => {
+    return numero % 2 === 0;
+  }
+const novoArray = array.filter(comparaçao);
+  return novoArray;
+*/
+
+// outro metodo de realizar sem o filter
+/*
+let  arrayNovo = [] // ANTES DO FOR PARA NAO FICAR CRIANDO UM NOVO ARRAY DPS DO FOR 
+for (let i = 0; i < array.length; i++) {
+  if (array[i]% 2 === 0) {
+    arrayNovo.push(array[i])
+   }
+}
+*/
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // EXERCÍCIO 05
-function retornaNumerosParesElevadosADois(array) {
- let voltaPar = (arrayElemento) => {
-     return(arrayElemento % 2 ) ===(0)
+function retornaNumerosParesElevadosADois(array) { // a funçao espera receber uma variavel
+ let voltaPar = (arrayElemento) => { //  funçao esta sendo atribuiada a variavel volta par
+     return arrayElemento % 2  === 0
  }
  let elevado2 = ( arrayElemento) => {
      return arrayElemento * arrayElemento
  }
  return array.filter(voltaPar).map(elevado2)
+ // o filter esperava recebeer uma variavel e ele recebeu uma variavel que e uma funçao (calback)
 }
+ //array.forEach(element => {}); o element vai pecorer todos os elementos
+ // quase igual o for
 
 
 
@@ -78,12 +83,14 @@ function retornaNumerosParesElevadosADois(array) {
 
 
 
-// EXERCÍCIO 06
+
+
+
+// EXERCÍCIO 06   , tentar fazer com objeto dps
 function retornaMaiorNumero(array) {
- 
- Math.max[array.length]
-return retornaMaiorNumero
-   
+ const maiorNumero = Math.max(...array) 
+    return maiorNumero
+
    }
 
 
