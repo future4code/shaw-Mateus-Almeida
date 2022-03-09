@@ -1,0 +1,10 @@
+body{
+    background-image: url(../template-loja/imagens/182195-14523489.jpg);
+    background-color: cover;
+}
+.nomepagina{
+    display: inline-block;
+    background-color: rgba(197, 190, 190, 0.39);
+ color: rgba(247, 2, 2, 0.911);
+ border-radius: 20px;
+}
