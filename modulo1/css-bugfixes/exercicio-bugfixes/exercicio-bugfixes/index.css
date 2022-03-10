@@ -77,13 +77,16 @@ div img {
 
 #container-para-comprar {
     background-color: #e7eb90;
+   
 }
 
 #container-para-comprar>p {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
+    
 }
+
 
 
 /**
@@ -127,4 +130,9 @@ td button {
 
 #back-button:hover {
     background-color: #635a3d
+}
+
+
+.botao-amarelo{
+    margin-left:auto;
 }
