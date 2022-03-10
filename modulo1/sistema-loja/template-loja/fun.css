@@ -1,8 +1,13 @@
 body{
-    background-image: url();
-    background-color: cover;
+    background-image: url(../template-loja/imagens/ginrace4.jpg);
+    background-size: cover;
 }
 
 .color{
     color: red;
+}
+.funcionariodisplay{
+    background-color: rgb(222, 196, 233);
+    border-radius: 20px;
+    display: inline-block;
 }

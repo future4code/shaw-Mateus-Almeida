@@ -4,7 +4,12 @@ body{
 }
 .nomepagina{
     display: inline-block;
-    background-color: rgba(197, 190, 190, 0.39);
- color: rgba(247, 2, 2, 0.911);
+    background-color: rgb(0, 0, 0);
+ color: rgba(248, 244, 244, 0.911);
  border-radius: 20px;
+}
+.menucor{
+    background-color: rgb(27, 248, 7);
+    display: inline-block;
+    border-radius: 20px;
 }
