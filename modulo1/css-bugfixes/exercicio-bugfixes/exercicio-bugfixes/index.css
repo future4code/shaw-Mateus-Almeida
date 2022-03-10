@@ -90,6 +90,10 @@ div img {
     
 }
 
+.botao-amarelo{
+    margin: 150px;
+  }
+  
 
 
 /**
@@ -135,4 +139,7 @@ td button {
     background-color: #635a3d
 }
 
-
+.centralizarproduto{
+    position: relative;
+    left: 200px;
+}
