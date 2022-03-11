@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    
+    
+
+}
+
+
+
+ .botaoInicial{
+     font-family: arial ;
+     font-size: 20px;
+     text-transform: uppercase;
+     font-weight: bold;
+     border: none;
+     padding: 70px;
+     cursor: pointer;
+     position: relative;
+     margin-top: 200px;
+     display: inline;
+ }
+ .botaoCor{
+     background-color: red;
+     border-radius: 20px;
+     position: relative;
+     left: 50px;
+     margin-top: 0px;
+     
+ }
+ .botaoQuemEuSou{
+    background-color: blue;
+    border-radius: 20px;
+    position: relative;
+    left: 50px;
+    margin-top: 0px;
+ }
+ .projetos{
+    background-color: green;
+    border-radius: 20px;
+    position: relative;
+    left: 50px;
+    margin-top: 0px;
+ }
+ .listas{
+    background-color: purple;
+    border-radius: 20px;
+    position: relative;
+    left: 50px;
+    margin-top: 0px;
+}
+.labenu{
+    background-color: rgb(228, 107, 8);
+    border-radius: 20px;
+    position: relative;
+    left: 10px;
+    margin-top: 20px;
+}
+.instagram{
+    background-color: rgb(6, 245, 213);
+    border-radius: 20px;
+    position: relative;
+    left: 10px;
+    margin-top: 20px;
+    
+}
+.github{
+    background-color: rgb(252, 2, 218);
+    border-radius: 20px;
+    position: relative;
+    left: 10px;
+    margin-top: 20px;
+}
+.instagram1{
+    background-color: rgb(207, 36, 6);
+    border-radius: 20px;
+    position: relative;
+    bottom: 140px;
+    margin-top: 20px;
+    
+}
+.github1{
+    background-color: rgb(25, 231, 6);
+    border-radius: 20px;
+    position: relative;
+    bottom: 140px;
+    margin-top: 20px;
+}
+
+.listacor{
+    background-image: url(imagens/listafoto.jpeg);
+}
+.FOTOSOBREMIN{
+    background-image: url(imagens/pexels-photo-325185.jpeg);
+}
+.fprojeto{
+    background-image: url(imagens/pexels-photo-3025005.jpeg);
+}
+.corFonte{
+    color: white;
+}
+.corfonte1{
+    color: white;
+}
+.branco{
+    color:white;
+}
