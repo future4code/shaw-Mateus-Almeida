@@ -1,0 +1,9 @@
+body{
+background-image: url(../template-loja/imagens/ozone-zeno-en-d-siklóernyő.jpg);
+background-size: cover;
+}
+.menucor{
+    background-color: rgb(224, 248, 8);
+    display: inline-block;
+    border-radius: 20px;
+}

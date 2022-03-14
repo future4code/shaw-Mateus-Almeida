@@ -1,0 +1,37 @@
+.preco {
+    color: crimson;
+}
+.quantidade {
+    width: 10px;
+    height: 10px;
+    right: 10px;
+    left: 10px;
+     
+     
+     border-radius: 20px;
+
+
+
+}
+body{
+    background-image: url(../template-loja/imagens/nuvem.jpg);
+    background-size: cover;
+}
+.fonte3{
+    border-radius: 20px;
+    
+    background-color: rgb(219, 3, 183);
+    border-radius: 30px;
+}
+.menucor{
+    border-radius: 20px;
+     display: inline-block;
+    background-color: rgb(223, 145, 29);
+    
+}
+.bordamenu{
+    border-radius: 20px;
+     
+    background-color: rgb(35, 185, 48);
+    
+}
