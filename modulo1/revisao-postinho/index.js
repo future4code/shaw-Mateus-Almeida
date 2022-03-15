@@ -5,7 +5,7 @@
 // a-)Comparador de desigualdade a!==b 
 // Exemplo:
 // vou comentar so para nao quebrar o site
-
+/*
 function checarDesigualdade(a, b) {
 
     return `No comparador de desigualdade ${a}!==${b} é ${a !== b}`
@@ -20,10 +20,11 @@ function checarIgualdade(a, b) {
 }
 console.log(checarIgualdade( 12, 12))
 
-
+*/
 
 
 // c-)Faça uma função chamada "verificaSeEMaior"
+/*
  function verificaSeEMaior(a, b){
 
     return  `o numro  ${a} e >  ${b}  é ${a > b}`
@@ -31,7 +32,7 @@ console.log(checarIgualdade( 12, 12))
  }
 
 console.log(verificaSeEMaior(321, 2156))
-
+*/
 
 // Exercício 2------------------------------------------------------------------------------------
 //Escreva true or false para as comparações abaixo:
@@ -46,6 +47,7 @@ console.log(verificaSeEMaior(321, 2156))
 // CONDICIONAIS
 
 // Exercício 3------------------------------------------------------------------------------------
+/*
 const nomeDoUsuario=prompt( "me fale seu nome completo")
 let anoDeNascimento= Number(prompt("me fale seu ano de nascimento") )
 const senhaDoUsuario =prompt("digite sua senha de usuario")
@@ -76,7 +78,7 @@ console.log(usuario)
 console.log(cadastro());
 
 
-    
+*/
  
         
      
@@ -84,6 +86,7 @@ console.log(cadastro());
 // sempre em retorna que nao e brasileiro!
 
 // Exercício 4-----------------------------------------------------------------------------------------------
+/*
   let senhaUsuario1 =prompt("digite uma senha ")
 const login = () => {
     const login = "labenu"
@@ -95,13 +98,11 @@ const login = () => {
 
 }
 console.log(login());
-// afzer desafio 4 depois!
-
-
-
+*/
+//  desafio 4 depois!
 
 // Exercício 5----------------------------------------------------------------------------------------------------
-
+/*
 
 const primeiraDose = () => {
      let nome5 =prompt("me informe seu nome")
@@ -121,11 +122,11 @@ console.log(primeiraDose())
 
 }
 console.log(primeiraDose())
-
+*/
 // LOOP+CONDICIONAL
 
 // Exercício 6 -------------------------------------------------------------------------------------
-
+/*
 const segundaDose = (nomeDoUsuario) => {
     const usuarios = [
         { nome: "Artur", imunizacao: "incompleta" },
@@ -133,23 +134,30 @@ const segundaDose = (nomeDoUsuario) => {
         { nome: "Carlos", imunizacao: "incompleta" }
     ]
     
-     // return { ...usuarios,nomeDoUsuario, imunizacao:"completa"}
+      return { ...usuarios,nomeDoUsuario, imunizacao:"completa"}
 
 }
 
 console.log(segundaDose("Barbara"));
+*/
 
 // Exercício 7 --------------------------------------------------------------------------------------
 
-const avisoAosAtrasados = () => {
+//const avisoAosAtrasados = () => {
+    /*
+    
     const usuarios = [
         { nome: "Artur", imunizacao: "incompleta" },
         { nome: "Barbara", imunizacao: "completa" },
-        { nome: "Carlos", imunizacao: "incompleta" }
-    ]    
-    return usuarios
-   
-}
+        { nome: "Carlos", imunizacao: "incompleta"}
+    ]
+    for(let i = 0; i < usuarios.length; i++){
+       if (usuarios[i].imunizacao == "incompleta"){
+        console.log(`Olá ${usuarios[i].nome}! Sua imunização está ${usuarios[i].imunizacao}, por favor volte ao postinho para tomar a segunda dose.`)
+       }
+    }
+    */
+// nao etendi pedir explicaçao
 // mais de 5 horas aki sem resolver , amanha continuo!
 
 
@@ -168,7 +176,7 @@ console.log(voltarVacina)
 
 
 // DESAFIO------------------------------------------------------------------------------------------
-
+/*
 const usuarios = [
     {
         nome: "Artur",
@@ -196,28 +204,81 @@ const usuarios = [
     }
        
 ]
+*/
 
 
-const cadastroDesafio = () => {
-    //  Sua lógica aqui
-}
-console.log(cadastroDesafio());
 
-const loginDesafio = () => {
-    //  Sua lógica aqui
-}
-console.log(loginDesafio());
+ // desafio  questão 4
+ 
+   /*
+ const usuarios = [
+    {
+        nome: "Artur",
+        ano: 2000,
+        nacionalidae: "brasileiro",
+        senha: "123456",
+        vacina: "pfizer",
+        imunizacao: "incompleta"
+    },
+    {
+        nome: "Bárbara",
+        ano: 1984,
+        nacionalidae: "brasileira",
+        senha: "labenu",
+        vacina: "astrazenica",
+        imunizacao: "completa"
+    },
+    {
+        nome: "Carlos",
+        ano: 1999,
+        nacionalidae: "brasileiro",
+        senha: "123456",
+        vacina: "coronavac",
+        imunizacao: "incompleta"
+    }
+    ]
+    let nome =prompt("qual seu nome")
+    let senha =prompt("qual sua senha")
+     const cadastroDesafio = (nomeUsuario, senhaUsuario) => {
+          for(let i = 0; i < usuarios.length; i++){
+              if(usuarios[i].nome === nomeUsuario && usuarios[i].senha === senhaUsuario){
+                  console.log(`Usuario ${nomeUsuario} cadastrado`);
+               }else{
+                   console.log("Cadastro não encontrado");
+                }
+             }
+        }
+         (cadastroDesafio(nome,senha));
 
-const primeiraDoseDesafio = () => {
-//  Sua lógica aqui
-}
-console.log(primeiraDoseDesafio())
-const segundaDoseDesafio = (nomeDoUsuario) => {
-    //  Sua lógica aqui
-}
-console.log(segundaDoseDesafio("ALGUM NOME AQUI"));
 
-const avisoAosAtrasadosDesafio = () => {
-    //  Sua lógica aqui
-}
-console.log(avisoAosAtrasadosDesafio());
+            */            
+
+         // resolvido 4
+   
+/*
+   console.log(cadastroDesafio());
+   
+   const loginDesafio = () => {
+   
+       let novoObjeto=[
+          
+       ]
+   }
+   
+   console.log(loginDesafio());
+   
+   const primeiraDoseDesafio = () => {
+   //  Sua lógica aqui
+   }
+   console.log(primeiraDoseDesafio())
+   
+   const segundaDoseDesafio = (nomeDoUsuario) => {
+       //  Sua lógica aqui
+   }
+   console.log(segundaDoseDesafio("ALGUM NOME AQUI"));
+   
+   const avisoAosAtrasadosDesafio = () => {
+       //  Sua lógica aqui
+   }
+   console.log(avisoAosAtrasadosDesafio());
+   */
