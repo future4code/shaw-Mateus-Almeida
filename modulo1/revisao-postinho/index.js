@@ -210,7 +210,7 @@ const usuarios = [
 
  // desafio  questão 4
  
-   /*
+  
  const usuarios = [
     {
         nome: "Artur",
@@ -237,6 +237,7 @@ const usuarios = [
         imunizacao: "incompleta"
     }
     ]
+     /*
     let nome =prompt("qual seu nome")
     let senha =prompt("qual sua senha")
      const cadastroDesafio = (nomeUsuario, senhaUsuario) => {
@@ -255,21 +256,58 @@ const usuarios = [
 
          // resolvido 4
    
-/*
-   console.log(cadastroDesafio());
-   
-   const loginDesafio = () => {
-   
-       let novoObjeto=[
-          
-       ]
-   }
+// refatorando 3
+
+
+
+
+
+  /*
    
    console.log(loginDesafio());
+   let novoObjeto = {}
+const loginDesafio = () => {
+    //  Sua lógica aqui
+    
+    if(idade >18 && senhaa.length > 6 && nacionalidade === "brasileira" ){
+            
+            novoObjeto = {
+            nome : nomee,
+            ano :ano,
+            nacionalidade: nacionalidade,
+            senha: senhaa,
+            vacina: vacina,
+            imunizacao: imunizacao,
+        }
+
+        }else{
+            console.log("Não deu para completar o cadastro!");
+        }
+        usuarios.push(novoObjeto)
+        return usuarios
+}
+    let nomee = prompt(`Digite seu nome`)
+    let ano = Number(prompt(`me fale seu ano de nascimento"`))
+    let nacionalidade = prompt(`me fale sua nascionalidade`)
+    let senhaa = prompt(`informe sua senha`)
+    let vacina = prompt(`me informe  a sua vacina`)
+    let imunizacao = prompt(`Digite sua imunização,completa ou incompleta`)
+    let idade = 2022 - ano
+   */
    
    const primeiraDoseDesafio = () => {
    //  Sua lógica aqui
-   }
+   let senhaComparacao =prompt("me fale sua senha")
+    for (let i = 0; i < usuarios.length; i++) {
+        const usuarios[i].nome ===  senhaComparacao;
+        return senhaComparacao
+            
+        
+    }
+        
+    }
+   
+   /*
    console.log(primeiraDoseDesafio())
    
    const segundaDoseDesafio = (nomeDoUsuario) => {
@@ -281,4 +319,4 @@ const usuarios = [
        //  Sua lógica aqui
    }
    console.log(avisoAosAtrasadosDesafio());
-   */
+   
