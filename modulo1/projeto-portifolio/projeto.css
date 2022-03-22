@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+     font-style: oblique white;
+    
+
+}
+
+
+ .botaoInicial{
+     font-family: arial ;
+     font-size: 10px;
+     text-transform: uppercase;
+     
+     border: none;
+     padding: 30px;
+     cursor: pointer;
+     position: relative;
+     margin-top: -50px;
+     display: inline-block;
+     
+ }
+ .botaoCor{
+     background-color: grey;
+     border-radius: 20px;
+     position: relative;
+     left: 100px;
+     margin-top: -35px;
+     color: rgb(255, 0, 0);
+     font-style: italic;
+     display: flex;
+ }
+ .botaoQuemEuSou{
+    background-color:grey;
+    border-radius: 20px;
+    position: relative;
+    left: 150px;
+    margin-top: 0px;
+    color: red;
+ }
+
+
+ 
+
+ .projetos{
+    background-color: grey;
+    border-radius: 20px;
+    position: relative;
+    left: 100px;
+    margin-top: 0px;
+    color: red;
+ }
+ .listas{
+    background-color: grey;
+    border-radius: 20px;
+    position: relative;
+    left: 100px;
+    margin-top: -50px;
+    color: red;
+}
+.labenu{
+    background-color:rgb(21, 255, 0);
+    ;
+    position: relative;
+    left: 150px;
+    margin-top: 20px;
+    color: white;
+}
+.instagram{
+    background-color: rgb(21, 255, 0);
+    
+    position: relative;
+    left: 150px;
+    margin-top: 20px;
+    color: white;
+    
+    
+}
+.github{
+    background-color: rgb(21, 255, 0);
+    
+    position: relative;
+    left: 150px;
+    margin-top: 20px;
+    color: white;
+}
+.instagram1{
+    background-color: rgb(252, 250, 249);
+    border-radius: 20px;
+    position: relative;
+    bottom: 140px;
+    margin-top: 0px;
+    color: red;
+    
+}
+.github1{
+    background-color: rgb(244, 250, 243);
+    border-radius: 20px;
+    position: relative;
+    bottom: 140px;
+    margin-top: 00px;
+    color: red;
+}
+
+.listacor{
+    background-color: gray;
+}
+.FOTOSOBREMIN{
+    background-color: gray;
+}
+.fprojeto{
+    background-color: gray;
+}
+.fotomeuprojeto{
+    background-color: gray;
+}
+.menuinicial1{
+    background-color: gray;
+}
+.listacor{
+    background-color: ;
+}
+
+.corFonte{
+    color: white
+}
+.corfonte1{
+    color: white;
+}
+.branco{
+    color:white;
+}
+.titulosobremim h1 , h3 , p{
+    color: white;
+    display: flex;
+    margin-top: 00px;
+    margin-left: 300px;
+    margin-right: 0px;
+    position:relative;
+    top: -220px
+    
+   
+
+}
+.listacor{
+    color: white;
+    background-color: black;
+}
+.aaa{
+    color: white;
+}
+.fotominha{
+    
+    border-radius: 100px;
+    display: flex;
+    margin-top: 50px;
+    
+}
+.paginainicial{
+    position:relative;
+    right: 150px;
+    
+}
+.topo{
+left: 200px;
+
+
+
+
+}
