@@ -50,22 +50,52 @@ class Post extends React.Component {
   }
   // para o numero de curtida , sempre começando como se nao tivesse curtido
 // mandei o que consegui , mais continuarei fazendo e estudando!
+// let curtidoNovo =this.state.curtido ?(this.state.numeroCurtidas-1) : (this.state.numeroCurtidas+1);z
   onClickCurtida = () => {
-
-    
-
-    this.setState({
-      curtido: true,
-      
-    })
-    
+      this.setState({
+      curtido:!this.state.curtido
+       })
+       if(this.state.curtido === true){
+         this.setState({
+           numeroCurtidas: this.state.numeroCurtidas -1
+         })}else {
+          this.setState({
+          numeroCurtidas: this.state.numeroCurtidas +1  
+        }
+        )
+       }
+          
   }
- // let curtidoNovo =this.state.curtido ?(this.state.numeroCurtidas-1) : (this.state.numeroCurtidas+1);
+ 
   onClickComentario = () => {
     this.setState({
       comentando: !this.state.comentando
+      
     })
   }
+  // tentando resolver a 4 para ir para a implementaçao da 1 e da 2
+  /*
+  export class     SecaoComentario extends Component {
+    state = {
+        inputComentario:""
+    }
+
+    onChangeComentario = (event) => {
+      this.setState({inputComentario:
+      event.target.value
+      })
+  }
+  render() {
+    return <CommentContainer>
+        <InputComentario
+            placeholder={'Comentário'}
+            value={this.state.inputComentario}
+            onChange={this.onChangeComentario}
+        />
+        <button onClick={this.props.aoEnviar}>Enviar</button>
+    </CommentContainer>
+}
+} */
 
   aoEnviarComentario = () => {
     this.setState({
