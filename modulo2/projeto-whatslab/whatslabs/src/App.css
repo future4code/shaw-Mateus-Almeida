@@ -5,13 +5,30 @@
 
 
 .nome{
-  width: 8%;
-  left:  500px;
-  
+  width: 28%;
+  border: 20%;
+  border: 3px solid black;
+  left:  10px;
   }
 
+  
+  .b{
+    width: 28%;
+    border: 20%;
+    border: 3px solid black;
+    left:  10px;
+    background: rgb(153, 2, 2);
+    border-radius: 28%;
+    }
+    .a{
+      
+      border: 20%;
+      border: 3px solid black;
+      left:  10px;
 
-
+      }
+      
+    
 
 
 
