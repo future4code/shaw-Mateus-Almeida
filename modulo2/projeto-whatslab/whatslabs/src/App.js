@@ -1,10 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return(
-  <p>ola</p>
+import './App.css';
+import React from 'react';
+import { render } from '@testing-library/react';
+
+
+
+
+
+
+function App(props) {
+ 
    
+  return(
+  <div>
+    <input className='nome'/>
+  <input/>
+  <button>enviar </button>
+
+
+
+
+  </div>
+  
+
   )
 }
 
