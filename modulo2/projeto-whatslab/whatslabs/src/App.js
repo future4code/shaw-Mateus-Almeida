@@ -100,15 +100,17 @@ class App extends React.Component {
  }
  onChangeNomeu=(event)=>{
    this.setState({controleNomeu: event.target.value})
-   console.log(this.state.controleNomeu)
+   //console.log(this.state.controleNomeu)
  }
    onChangeMensagem =(event)=>{
     this.setState({controleMensagem: event.target.value})
-    console.log(this.state.controleMensagem)
+    //console.log(this.state.controleMensagem)
   
   
   } 
+ 
   onClikButton =()=>{
+    
     this.setState({controleNomeu:""})
     this.setState({controleMensagem:""})
   }
