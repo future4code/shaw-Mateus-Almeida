@@ -89,6 +89,21 @@ margin:0px;
 backgroundcolor: rgb(153, 2, 2);
 
 `
+/* 
+perguntar na aula
+1- como fazer para aparecer na tela as msg
+2- como relacionar melhor os eventos 
+3- como passar os props de forma mais limpa 
+
+rever os conteudos!
+
+
+
+*/
+
+
+
+
 
 
 /*function App(props) { */
@@ -131,7 +146,7 @@ render(){
     <MainDiv>
        
   <Borda >
-  <Mensagen> DSFASDFADSFASD</Mensagen>
+  <Mensagen> </Mensagen>
   <BoxInput>
   <Nomeu onChange={this.onChangeNomeu}
   value={this.state.controleNomeu}  
