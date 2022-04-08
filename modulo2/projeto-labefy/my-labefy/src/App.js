@@ -12,7 +12,14 @@ import styled from 'styled-components';
 
 export default class app extends react.Component {
   state = {
-    playlist: ""
+    playlist: "",
+    userPlaylist:[
+    {nomeMusica :"",
+  },
+    {nomeArtista : "",
+  },
+    {urlMusica: "" 
+  }]
 
 
   }
@@ -40,7 +47,25 @@ export default class app extends react.Component {
       .catch((err) => console.log(err.response));
 
   }
+// descobri como pegar o id para poder add a musica a a playslist
+/*
+addMusicaAPlaylist =() =>{
+  const url = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks"
+  const body = {
 
+  }
+  
+   axios
+   .post(url, body,{
+     headers:{
+       Authorization:"mateus-almeida-shaw"
+     }
+     
+   }).then((res) => console.log(res))
+   .catch((err) => console.log(err.response));
+  }
+
+  */
 
 
 
@@ -60,8 +85,8 @@ export default class app extends react.Component {
           placeholder="nome da musica"
         ></input>
         <br></br>
-        <input 
-        placeholder='artista'
+        <input
+          placeholder='artista'
         ></input>
         <br></br>
         <input
@@ -70,6 +95,7 @@ export default class app extends react.Component {
         <br></br>
 
         <button >add playlist</button>
+        
       </div>
     )
   }
