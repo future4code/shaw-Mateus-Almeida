@@ -16,7 +16,8 @@ const Post = (props) => {
   const [comentarios, setcomentarios] = useState()         // queria usar um []
   
   
-//
+////
+
 
   const onClickCurtida = () => {
    setCurtido(curtido ? false : true)
