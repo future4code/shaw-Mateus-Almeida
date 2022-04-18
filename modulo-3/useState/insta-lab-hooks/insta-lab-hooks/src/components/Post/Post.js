@@ -16,7 +16,8 @@ const Post = (props) => {
   const [comentarios, setcomentarios] = useState()         // queria usar um []
   
   
-////
+// rever a aula
+// 
 
 
   const onClickCurtida = () => {
