@@ -1,10 +1,10 @@
-import logo from './logo.svg';
+import react from 'react';
 import './App.css';
 
 function App() {
   return (
     <div>
-      aa
+      base
     </div>
   );
 }
