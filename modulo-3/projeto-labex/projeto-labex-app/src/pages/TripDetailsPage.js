@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 
-function App() {
+function TripDetailsPage() {
   return (
     <div>
       aaaaaasds
@@ -10,4 +10,4 @@ function App() {
   );
 }
 
-export default App;
+export default TripDetailsPage;
