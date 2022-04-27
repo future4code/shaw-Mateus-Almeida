@@ -1,4 +1,5 @@
 import React from "react";
+/* 
 import AdminHomePage from "./pages/AdminHomePage";
 import ApplicationFormPage from "./pages/ApplicationFormPage";
 import CreateTripPage from "./pages/CreateTripPage";
@@ -7,6 +8,7 @@ import ListTripsPage from "./pages/ListTripsPage";
 import LoginPage from "./pages/LoginPage";
 import TripDetailsPage from "./pages/TripDetailsPage";
 import {BrowserRouter ,Routes ,Route} from "react-router-dom"
+*/
 import { Router } from "./routes/Router";
 
 
