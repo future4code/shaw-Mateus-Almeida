@@ -19,7 +19,7 @@ function ListTripsPage() {
         setTrips(response.data.trips)
       })
       .catch(error => {
-        console.log(error.data.trips)
+       alert(error.data.trips)
       })
   }
   const listaTrips = trips.map((trip) =>{
