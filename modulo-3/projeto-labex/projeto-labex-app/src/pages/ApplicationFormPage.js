@@ -33,6 +33,7 @@ function ApplicationFormPage() {
       .then(response => {
         console.log(response.data.trips)
         setTrips(response.data.trips)
+
       })
       .catch(error => {
         alert(error.data.trips)
