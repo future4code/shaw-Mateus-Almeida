@@ -63,18 +63,22 @@ const changePlanet =(event)=>{
       value={name}
       onChange={changeName}
       />
+      <br></br><br></br>
       <input placeholder="escolher planeta"
       value={planet}
       onChange={changePlanet}
       />
+       <br></br><br></br>
       <input placeholder="data/ dd/mm/aa"
       value={date}
       onChange={changeDate}
       />
+       <br></br><br></br>
       <input placeholder="descriçao"
       value={description}
       onChange={changeDescription}
       />
+       <br></br><br></br>
       <input placeholder="duraçao em dias"
       value={time}
       onChange={changeTime }
