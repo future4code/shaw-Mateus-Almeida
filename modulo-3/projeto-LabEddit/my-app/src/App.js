@@ -1,5 +1,5 @@
 import React from "react";
-import Router from "./Rotas";
+import Router from "./routes/Rotas";
 
 
 

@@ -1,10 +1,12 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./Login";
-import Cadastro from "./Cadastro";
-import Feed from "./Feed";
-import Post from "./Post";
 
+import Cadastro from "../pages/Cadastro";
+import Feed from "../pages/Feed";
+import Login from "../pages/Login";
+import Post from "../pages/Post";
+
+// usar ctrl + espaço no final da palavra para chamar o auto import
 export default function Router() {
     return (
         <BrowserRouter>
