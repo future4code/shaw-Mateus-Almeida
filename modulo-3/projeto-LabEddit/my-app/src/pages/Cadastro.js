@@ -4,10 +4,15 @@ import { useState } from "react";
 import axios from "axios";
 
 function Cadastro() {
+  // USENAVIGATE PARA NAVEGAR ENTRE AS ROTAS 
   const navigate=useNavigate()
+  // MEU ESTADO QUE  IREI GUARDA AS INFORMAÇOES 
   const[ userName ,setUserName]=useState("")
   const [loginUser, setLoginUser] = useState("")
   const [senhaUser, setSenhaUser] = useState("")
+  const irParaFeed = () => {
+    navigate("/feed")
+  }
   const onUserName =(event)=>{
     setUserName(event.target.value)
   }
@@ -17,11 +22,13 @@ function Cadastro() {
   const onSenha = (event) => {
     setSenhaUser(event.target.value)
   }
+  // componentes funçoes ou clases sao passados com inicial maiusculo , componente que renderiza na pagina e maiusculo, funcao e variaveis o camel case 
   /*  criei o metodo post para fazer a autorizaçao da pessoa se cadastrar
   passei a mesma base da url que pedia no postman 
   usei o window.localStorage para guarda o token nele 
   passei o body com input controlado para a pessoa saber digitar sua senha de cadastro 
   */
+ // event.preventDefault() PARA NAO DEIXAR A PAGINA TER SEU COMPORTAMENTO PADRAO , E NAO ATUALIZAR A CADA COISA DIGITADA
   const baseURL="https://labeddit.herokuapp.com"
 const postCadastro=(event)=>{
   event.preventDefault()
@@ -35,8 +42,9 @@ const postCadastro=(event)=>{
 axios.post(`${baseURL}/users/signup`, body)
 .then(resp =>{
   console.log(resp.data)
-  window.localStorage.setItem("tokenAutorizacaoCadastro", resp.data.token)
+  window.localStorage.setItem("token", resp.data.token)
   alert("voce foi cadastrado com sucesso!")
+  irParaFeed()
   
 })
 .catch(error =>{

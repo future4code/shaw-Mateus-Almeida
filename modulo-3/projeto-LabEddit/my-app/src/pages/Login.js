@@ -5,9 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate()
+  // FUNCAO QUE ME LEVA PARA UMA PAGINA ESPECIFICA
   const irParaCadastro = () => {
     navigate("/Cadastro")
   }
+  // FUNÇAO QUE ME LEVA PARA UMA PAGINA ESPECIFICA
   const irParaFeed = () => {
     navigate("/feed")
   }
@@ -35,10 +37,11 @@ function Login() {
 
     }
     //console.log(body)
+    //   window.localStorage.setItem("token", resp.data.token) PARA GUARDA O TOKEN NO LOCALSTORAGE
     axios.post(`${baseURL}/users/login`, body)
       .then(resp => {
         console.log(resp.data);
-        window.localStorage.setItem("tokenAutorizacao", resp.data.token)
+        window.localStorage.setItem("token", resp.data.token)
         irParaFeed()
       })
       .catch(error => {
