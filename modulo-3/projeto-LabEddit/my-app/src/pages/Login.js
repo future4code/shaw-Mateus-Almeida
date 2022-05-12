@@ -2,6 +2,52 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import logoImg from "../imagens/1.png"
+
+const Paizao =styled.div`
+display:flex;
+flex-direction:column;
+
+height:100vh;
+
+margin-left:-2%;
+
+
+`
+const ImgLogo =styled.img`
+display:flex;
+margin-top:40%;
+margin-left:0%;
+max-width:100%;
+max-height:100%;
+
+
+`
+const InputsCaixa =styled.div`
+display: flex;
+justify-content:center;
+align-items: center;
+height: 100%;
+background-color:#8539EA ;
+
+input{
+  display:flex;
+
+}
+`
+const BotaoCriar =styled.button`
+margin-left:63%;
+background-color:#8539EA;
+`
+
+const BotaoContinuar =styled.button`
+margin-left:28%;
+
+`
+
+
+
 
 function Login() {
   const navigate = useNavigate()
@@ -64,7 +110,15 @@ function Login() {
   // criei o onSubmit e passei a funçao junto com o form 
   return (
 
-    <div>
+    <Paizao>
+      <div>
+      <BotaoCriar onClick={irParaCadastro}><strong>Crie uma conta!</strong></BotaoCriar>
+      </div>
+      <div>
+      <ImgLogo src={logoImg}/>
+      </div>
+      <InputsCaixa >
+      
       <form onSubmit={postLogin}>
         <input
           placeholder="Nome"
@@ -72,7 +126,7 @@ function Login() {
           value={loginUser}
           onChange={onLogin}
         />
-
+        <br></br>
         <input
           placeholder="Senha"
           type="password"
@@ -82,13 +136,17 @@ function Login() {
           title={"sua senha deve ter no minimo 8 caracteres é no maximo 30"}
 
         />
+       
 
         <br></br>
-        <button type={`submit`}>Continuar</button>
-        <br></br>
-        <button onClick={irParaCadastro}>Crie uma Conta!</button>
+        <BotaoContinuar type={`submit`}><strong>Continuar</strong></BotaoContinuar>
+   
+        
       </form>
-    </div>
+      <br></br>
+      </InputsCaixa >
+       
+    </Paizao>
 
   );
 }

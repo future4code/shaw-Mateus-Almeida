@@ -62,7 +62,7 @@ function Feed() {
     }
     axios.get(`${baseURL}/posts`, headers)
       .then(resp => {
-       // console.log(resp.data);
+        // console.log(resp.data);
         setPegandoPost(resp.data)
       })
       .catch(error => {
@@ -72,9 +72,9 @@ function Feed() {
   useEffect(() => {
     pegandoPost()
   }, [])
-const irParaDetalhes =(id)=>{
-  Navigate(`/post/${id}`)
-}
+  const irParaDetalhes = (id) => {
+    Navigate(`/post/${id}`)
+  }
 
 
 
@@ -84,6 +84,64 @@ const irParaDetalhes =(id)=>{
   // fazer agora os botoes para like e para ir para o post funcionar 
   // quando passo um argumento para a funçao ele precisa ser uma array function
   // form sempre se fecha depois do botao que finaliza a requisiçao
+
+const botaoLike =(userVote,postId)=>{
+  if (userVote === 1) {
+    likeEDeslikeEdelete(postId)
+  }else {
+    likeEDeslikeEdelete(postId,1)
+  }
+}
+const botaoDeslike =(userVote,postId)=>{
+  if (userVote === -1) {
+    likeEDeslikeEdelete(postId)
+  }else {
+    likeEDeslikeEdelete(postId,-1)
+  }
+}
+
+   const likeEDeslikeEdelete =(postId,direction)=> {
+    const headers = {
+      headers: {
+        Authorization:
+          localStorage.getItem(`token`)
+      }
+    }
+    const body={
+      "direction":direction
+    }
+    if (direction === 1) {
+      axios.post(`${baseURL}/posts/${postId}/votes`,body ,headers)
+      .then(resp => {
+        pegandoPost()
+        console.log(resp)
+      })
+      .catch(error => {
+        alert({ error })
+      })
+    }else if (direction === -1){
+      axios.put(`${baseURL}/posts/${postId}/votes`,body ,headers)
+      .then(resp => {
+        pegandoPost()
+        console.log(resp)
+      })
+      .catch(error => {
+        alert({ error })
+      })
+    }else {
+      axios.delete(`${baseURL}/posts/${postId}/votes`,headers)
+      .then(resp => {
+        pegandoPost()
+        console.log(resp)
+      })
+      .catch(error => {
+        alert({ error })
+      })
+    }
+    
+
+
+   }
   return (
     <div>
       <form onSubmit={criandoPost} >
@@ -96,31 +154,31 @@ const irParaDetalhes =(id)=>{
           onChange={onPost}
         />
         <button type={`submit`}>  postar</button>
-        </form>
-        <br></br>
-        <button onClick={voltarHome} >lougut</button>
-        <div>
-    {pegandoPosts.map((post)=>{
-      return  <div>
-        <p>{post.username}</p>
-          <p>{post.body} </p>
-          <div>
-           <button>{post.userVote}like</button> 
-            <button>{post.voteSum}deslike</button>
-           
-          </div>
-          <div> 
-           <button onClick={()=> irParaDetalhes(post.id)}>{post.commentCount}ver post</button> 
+      </form>
+      <br></br>
+      <button onClick={voltarHome} >lougut</button>
+      <div>
+        {pegandoPosts.map((post) => {
+          return <div>
+            <p>{post.username}</p>
+            <p>{post.body} </p>
+            <div>
+              <button onClick={()=>botaoLike(post.userVote,post.id)}>like</button>
+              <button onClick={()=>botaoDeslike(post.userVote,post.id)}>deslike</button>
+            {post.voteSum}
             </div>
-          <br></br>
-          
+            <div>
+              <button onClick={() => irParaDetalhes(post.id)}>{post.commentCount}ver post</button>
+            </div>
+            <br></br>
 
+
+          </div>
+
+
+        })}
       </div>
-   
-     
-    })}
-        </div>
-     
+
     </div>
 
   );
