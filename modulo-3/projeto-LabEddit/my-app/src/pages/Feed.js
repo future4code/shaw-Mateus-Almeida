@@ -1,6 +1,73 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import styled from "styled-components";
+const Paizao = styled.div`
+background-color:#8539EA;
+`
+const Post = styled.div`
+display:center;
+margin-left:20%;
+
+height: 91vh;
+button{
+  margin-left: 26%;
+
+  background-color: #9370DB; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 12%;
+  
+}
+`
+const Main = styled.div`
+margin-left:2%;
+margin-top:-160%;
+
+button{
+ 
+    background-color: #9370DB; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 12%;
+
+}
+p{
+  margin-left:8%;
+  color: white;
+}
+
+`
+const Button2 = styled.div`  
+margin-left:18%;
+margin-top: 2%;
+
+
+
+`
+const BotaoVoltar = styled.button`
+background-color: #9370DB; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 34%;
+    
+    
+`
 
 
 
@@ -85,101 +152,110 @@ function Feed() {
   // quando passo um argumento para a funçao ele precisa ser uma array function
   // form sempre se fecha depois do botao que finaliza a requisiçao
 
-const botaoLike =(userVote,postId)=>{
-  if (userVote === 1) {
-    likeEDeslikeEdelete(postId)
-  }else {
-    likeEDeslikeEdelete(postId,1)
+  const botaoLike = (userVote, postId) => {
+    if (userVote === 1) {
+      likeEDeslikeEdelete(postId)
+    } else {
+      likeEDeslikeEdelete(postId, 1)
+    }
   }
-}
-const botaoDeslike =(userVote,postId)=>{
-  if (userVote === -1) {
-    likeEDeslikeEdelete(postId)
-  }else {
-    likeEDeslikeEdelete(postId,-1)
+  const botaoDeslike = (userVote, postId) => {
+    if (userVote === -1) {
+      likeEDeslikeEdelete(postId)
+    } else {
+      likeEDeslikeEdelete(postId, -1)
+    }
   }
-}
 
-   const likeEDeslikeEdelete =(postId,direction)=> {
+  const likeEDeslikeEdelete = (postId, direction) => {
     const headers = {
       headers: {
         Authorization:
           localStorage.getItem(`token`)
       }
     }
-    const body={
-      "direction":direction
+    const body = {
+      "direction": direction
     }
     if (direction === 1) {
-      axios.post(`${baseURL}/posts/${postId}/votes`,body ,headers)
-      .then(resp => {
-        pegandoPost()
-        console.log(resp)
-      })
-      .catch(error => {
-        alert({ error })
-      })
-    }else if (direction === -1){
-      axios.put(`${baseURL}/posts/${postId}/votes`,body ,headers)
-      .then(resp => {
-        pegandoPost()
-        console.log(resp)
-      })
-      .catch(error => {
-        alert({ error })
-      })
-    }else {
-      axios.delete(`${baseURL}/posts/${postId}/votes`,headers)
-      .then(resp => {
-        pegandoPost()
-        console.log(resp)
-      })
-      .catch(error => {
-        alert({ error })
-      })
+      axios.post(`${baseURL}/posts/${postId}/votes`, body, headers)
+        .then(resp => {
+          pegandoPost()
+          console.log(resp)
+        })
+        .catch(error => {
+          alert({ error })
+        })
+    } else if (direction === -1) {
+      axios.put(`${baseURL}/posts/${postId}/votes`, body, headers)
+        .then(resp => {
+          pegandoPost()
+          console.log(resp)
+        })
+        .catch(error => {
+          alert({ error })
+        })
+    } else {
+      axios.delete(`${baseURL}/posts/${postId}/votes`, headers)
+        .then(resp => {
+          pegandoPost()
+          console.log(resp)
+        })
+        .catch(error => {
+          alert({ error })
+        })
     }
+
+
+
+  }
+  return (
+    <Paizao >
+      <div>
+        
+        <Post>
+          <form onSubmit={criandoPost} >
+            <input placeholder="digite seu titulo"
+              value={criarTitulo}
+              onChange={onTitulo}
+            />
+            <textarea placeholder="escreva seu texto"
+              value={criarPost}
+              onChange={onPost}
+            />
+            <br></br>
+            <button type={`submit`}>  postar</button>
+          </form>
+        </Post>
+
+        <Main>
+          {pegandoPosts.map((post) => {
+            return <div>
+              <p><u>{post.username}</u></p>
+              <p>{post.body} </p>
+              <div>
+                <button onClick={() => botaoLike(post.userVote, post.id)}><strong>- like</strong></button>
+                <button onClick={() => botaoDeslike(post.userVote, post.id)}><strong>{post.commentCount} - deslike</strong></button>
+
+              </div>
+              <Button2>
+                <button onClick={() => irParaDetalhes(post.id)}><strong>{post.commentCount}ver post</strong></button>
+              </Button2>
+              <br></br>
+
+
+            </div>
+
+
+          })}
+        </Main>
+        <br></br>
     
 
-
-   }
-  return (
-    <div>
-      <form onSubmit={criandoPost} >
-        <input placeholder="digite seu titulo"
-          value={criarTitulo}
-          onChange={onTitulo}
-        />
-        <textarea placeholder="escreva seu texto"
-          value={criarPost}
-          onChange={onPost}
-        />
-        <button type={`submit`}>  postar</button>
-      </form>
-      <br></br>
-      <button onClick={voltarHome} >lougut</button>
-      <div>
-        {pegandoPosts.map((post) => {
-          return <div>
-            <p>{post.username}</p>
-            <p>{post.body} </p>
-            <div>
-              <button onClick={()=>botaoLike(post.userVote,post.id)}>like</button>
-              <button onClick={()=>botaoDeslike(post.userVote,post.id)}>deslike</button>
-            {post.voteSum}
-            </div>
-            <div>
-              <button onClick={() => irParaDetalhes(post.id)}>{post.commentCount}ver post</button>
-            </div>
-            <br></br>
-
-
-          </div>
-
-
-        })}
+        <BotaoVoltar onClick={voltarHome} >lougut</BotaoVoltar>
+        
       </div>
-
-    </div>
+    </Paizao >
 
   );
 }

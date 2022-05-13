@@ -2,6 +2,59 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import styled from "styled-components";
+const Paizao = styled.div`
+background-color: #8539EA ;
+height: 100vh;
+
+p{
+  margin-left:20%;
+  color: white;
+}
+`
+const Botao1 = styled.button`
+  background-color: #9370DB; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+   margin-left: 14%;
+
+
+`
+const Pt2 = styled.div`
+margin-left: 20%;
+button{
+  background-color: #9370DB; 
+    border: none;
+    color: black;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+  margin-left:6%;
+
+}
+
+`
+const Botao2 = styled.button`
+  background-color: #9370DB; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+   margin-left: 14%;
+   margin-top:10%;
+`
+
+
 
 function PostDetalhe() {
   // TODOS OS ESTADOS QUE IREI USAR PARA GUARDA OS VALORES
@@ -101,45 +154,45 @@ function PostDetalhe() {
   }
 
 
-  const botaoLike =(userVote,postId)=>{
+  const botaoLike = (userVote, postId) => {
     if (userVote === 1) {
       likeEDeslikeEdelete(postId)
-    }else {
-      likeEDeslikeEdelete(postId,1)
+    } else {
+      likeEDeslikeEdelete(postId, 1)
     }
   }
-  const botaoDeslike =(userVote,postId)=>{
+  const botaoDeslike = (userVote, postId) => {
     if (userVote === -1) {
       likeEDeslikeEdelete(postId)
-    }else {
-      likeEDeslikeEdelete(postId,-1)
+    } else {
+      likeEDeslikeEdelete(postId, -1)
     }
   }
-  
-     const likeEDeslikeEdelete =(postId,direction)=> {
-     
-      const headers = {
-        headers: {
-          Authorization:
-            localStorage.getItem(`token`)
-        }
+
+  const likeEDeslikeEdelete = (postId, direction) => {
+
+    const headers = {
+      headers: {
+        Authorization:
+          localStorage.getItem(`token`)
       }
-      const body={
-        "direction":direction
-      }
-      if (direction === 1) {
-        axios.post(`${baseURL}/comments/${postId}/votes`,body ,headers)
+    }
+    const body = {
+      "direction": direction
+    }
+    if (direction === 1) {
+      axios.post(`${baseURL}/comments/${postId}/votes`, body, headers)
         .then(resp => {
           comentarios()
           console.log(resp)
-          
+
         })
         .catch(error => {
           console.log(error.response);
           alert({ error })
         })
-      }else if (direction === -1){
-        axios.put(`${baseURL}/comments/${postId}/votes`,body ,headers)
+    } else if (direction === -1) {
+      axios.put(`${baseURL}/comments/${postId}/votes`, body, headers)
         .then(resp => {
           comentarios()
           console.log(resp)
@@ -147,8 +200,8 @@ function PostDetalhe() {
         .catch(error => {
           alert({ error })
         })
-      }else {
-        axios.delete(`${baseURL}/comments/${postId}/votes`,headers)
+    } else {
+      axios.delete(`${baseURL}/comments/${postId}/votes`, headers)
         .then(resp => {
           comentarios()
           console.log(resp)
@@ -156,28 +209,29 @@ function PostDetalhe() {
         .catch(error => {
           alert({ error })
         })
-      }}
+    }
+  }
 
 
   //console.log(comentarioPost)input para criar o comentario
   // SEMPRE QUE USAR O FORM DEVE PASSAR ONSUBMIT NOP LUGAR DO ONCLICK  E NO BOTAO PASSAR TYPE ={SUBMIT}
 
   return (
-    <div>
-      <button onClick={voltarHome}>lougut</button>
-      <button onClick={voltarPage}> voltar page </button>
+    <Paizao >
+      <Botao1 onClick={voltarHome}>lougut</Botao1>
+      <Botao1 onClick={voltarPage}> voltar page </Botao1>
       <br>
-      
+
       </br>
       {pegandoPosts.map((post) => {
         if (post.id === params.id) {
           return <div>
-            <p>{post.username}</p>
+            <p><u>{post.username}</u></p>
             <p>{post.body} </p>
             <div>
-           
-            
-  
+
+
+
 
             </div>
 
@@ -194,13 +248,14 @@ function PostDetalhe() {
 
       })}
       <form onSubmit={postarComentario}>
-        <div >
+        <Pt2 >
           <textarea placeholder="deixe seu comentario"
             value={comentarioPost}
             onChange={onComentario}
           />
+          <br></br>
           <button type={`submit`}>enviar comentario</button>
-        </div>
+        </ Pt2>
       </form>
       <div>
         {comentarioLista.map((get) => {
@@ -208,16 +263,16 @@ function PostDetalhe() {
             <li>
               <lu>{get.body}</lu>
             </li>
-            {get.voteSum}
-            <button onClick={()=>botaoLike(get.userVote,get.id)}>like</button>
-            <button onClick={()=>botaoDeslike(get.userVote,get.id)}>deslike</button>
-         
+
+            <Botao2 onClick={() => botaoLike(get.userVote, get.id)}>{get.voteSum}-like</Botao2 >
+            <Botao2 onClick={() => botaoDeslike(get.userVote, get.id)}>{get.voteSum}-deslike</Botao2 >
+
           </div>
         })}
       </div>
 
-    
-    </div>
+
+    </Paizao >
 
   );
 }

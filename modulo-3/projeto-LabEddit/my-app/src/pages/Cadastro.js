@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const TextoLogo=styled.div`
+const TextoLogo = styled.div`
 
 background-color:#8539EA ;
 margin-top:-6%;
@@ -12,7 +12,7 @@ h3{
   margin-left:10%
 }
 `
-const PrincipalConteudo=styled.div`
+const PrincipalConteudo = styled.div`
 background-color:#8539EA ;
 input{
   margin-top:28%;
@@ -23,9 +23,17 @@ input{
 }
 
 `
-const ButtonCadastra =styled.button`
-margin-top: 26%;
-margin-left:34%;
+const ButtonCadastra = styled.button`
+margin-top:18%;
+margin-left:30%;
+background-color: #9370DB; /* Green */
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+
 `
 
 
@@ -86,37 +94,43 @@ function Cadastro() {
   return (
     < PrincipalConteudo>
       <TextoLogo>
-      <h3> Olá, bem vindo ao labeEddit</h3>
+        <h2> Olá, bem vindo ao labeEddit</h2>
       </TextoLogo>
-     <div>
-      <form onSubmit={postCadastro}>
+      <div>
+        <form onSubmit={postCadastro}>
+
+          <input placeholder="Nome do Usuario"
+            type="text"
+            value={userName}
+            onChange={onUserName}
+          />
+
+          <input placeholder="E-mail"
+            type="text"
+            value={loginUser}
+            onChange={onLogin} />
+
+          <input placeholder="Senha"
+            type="password"
+            value={senhaUser}
+            onChange={onSenha}
+            pattern={"^.{8,30}"}
+            title={"sua senha deve ter no minimo 8 caracteres é no maximo 30"}
+          />
+
+          <br></br>
+          <input type="checkbox" />
+          <p> <u> Ao continuar ,vocẽ concorda com o nosso contrato de usuário e nossa política de privacidade</u></p>
+
+          <br></br>
+          <ButtonCadastra type={`submit`}><strong>cadastrar</strong></ButtonCadastra >
+        </form>
+        <a href="https://www.linkedin.com/in/mateus-vinicius-42290022a/">
+        <img  src="https://img.icons8.com/nolan/80/linkedin-circled.png"
+        />
         
-        <input placeholder="Nome do Usuario"
-          type="text"
-          value={userName}
-          onChange={onUserName}
-        />
-
-        <input placeholder="E-mail"
-          type="text"
-          value={loginUser}
-          onChange={onLogin} />
-
-        <input placeholder="Senha"
-          type="password"
-          value={senhaUser}
-          onChange={onSenha}
-          pattern={"^.{8,30}"}
-          title={"sua senha deve ter no minimo 8 caracteres é no maximo 30"}
-        />
-
-        <br></br>
-        <input type="checkbox" />
-        <p> <u> Ao continuar ,vocẽ concorda com o nosso contrato de usuário e nossa política de privacidade</u></p>
+        </a>
        
-        <br></br>
-        <ButtonCadastra  type={`submit`}><strong>cadastrar</strong></ButtonCadastra >
-      </form>
       </div>
     </ PrincipalConteudo>
 

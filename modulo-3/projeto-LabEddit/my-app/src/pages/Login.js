@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import logoImg from "../imagens/1.png"
 
-const Paizao =styled.div`
+const Paizao = styled.div`
 display:flex;
 flex-direction:column;
 
@@ -15,7 +15,7 @@ margin-left:-2%;
 
 
 `
-const ImgLogo =styled.img`
+const ImgLogo = styled.img`
 display:flex;
 margin-top:40%;
 margin-left:0%;
@@ -24,7 +24,7 @@ max-height:100%;
 
 
 `
-const InputsCaixa =styled.div`
+const InputsCaixa = styled.div`
 display: flex;
 justify-content:center;
 align-items: center;
@@ -36,13 +36,29 @@ input{
 
 }
 `
-const BotaoCriar =styled.button`
-margin-left:63%;
-background-color:#8539EA;
+const BotaoCriar = styled.button`
+margin-left:10%;
+background-color: #8539EA ; /* Green */
+    border: none;
+    border-radius:80%;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    
 `
 
-const BotaoContinuar =styled.button`
-margin-left:28%;
+const BotaoContinuar = styled.button`
+margin-left:20%;
+background-color: #9370DB; /* Green */
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
 
 `
 
@@ -111,41 +127,42 @@ function Login() {
   return (
 
     <Paizao>
+
       <div>
-      <BotaoCriar onClick={irParaCadastro}><strong>Crie uma conta!</strong></BotaoCriar>
-      </div>
-      <div>
-      <ImgLogo src={logoImg}/>
+        <ImgLogo src={logoImg} />
       </div>
       <InputsCaixa >
-      
-      <form onSubmit={postLogin}>
-        <input
-          placeholder="Nome"
-          type="text"
-          value={loginUser}
-          onChange={onLogin}
-        />
-        <br></br>
-        <input
-          placeholder="Senha"
-          type="password"
-          value={senhaUser}
-          onChange={onSenha}
-          pattern={"^.{8,30}"}
-          title={"sua senha deve ter no minimo 8 caracteres é no maximo 30"}
 
-        />
-       
+        <form onSubmit={postLogin}>
+          <input
+            placeholder="Nome"
+            type="text"
+            value={loginUser}
+            onChange={onLogin}
+          />
+          <br></br>
+          <input
+            placeholder="Senha"
+            type="password"
+            value={senhaUser}
+            onChange={onSenha}
+            pattern={"^.{8,30}"}
+            title={"sua senha deve ter no minimo 8 caracteres é no maximo 30"}
 
+          />
+
+
+          <br></br>
+          <BotaoContinuar type={`submit`}><strong>Continuar</strong></BotaoContinuar>
+
+          <div>
+            <BotaoCriar onClick={irParaCadastro}><strong>Crie uma conta!</strong></BotaoCriar>
+          </div>
+        </form>
         <br></br>
-        <BotaoContinuar type={`submit`}><strong>Continuar</strong></BotaoContinuar>
-   
-        
-      </form>
-      <br></br>
+
       </InputsCaixa >
-       
+
     </Paizao>
 
   );
