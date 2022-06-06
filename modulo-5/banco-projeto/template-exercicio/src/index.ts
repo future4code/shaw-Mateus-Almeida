@@ -1,8 +1,10 @@
 import express, { Request, Response } from 'express'
 import cors from 'cors'
+import { accounts } from './accounts';
 const app = express();
 app.use(express.json());
 app.use(cors());
+
 
 
 type User = {
@@ -90,19 +92,61 @@ app.get("/pegarSaldo", (req: Request, res: Response) => {
         // se tudo fosse ok cai no status 200 e retorna a pessoa para saber o saldo
         res.status(200).send(saberSaldo)
     } catch (error: any) {
-        // se nao cai no error e fala que nao enconoutou a pessoa / saldo
+        // se nao cai no error e fala que nao encontrou a pessoa / saldo
         res.status(404).send("nao foi encontra o user e o saldo ")
     }
 })
+
+ 
+
+
+///////////// parte seguindo a resolução do projeto////////////
+//validar as entradas da requisiçao
+// consultart ou alterar a base de dados
+// validar os resultados da consulta 
+// enviar a resposta
 /*
+app.post("/users/create", (req: Request, res: Response) => {
+    try {
+        const { name, cpf, dateOfBirthasString } = req.body
+        const [day, month, year] = dateOfBirthasString.split("/")
+        const dateOfBirth: Date = new Date(`${year} -${month}- ${day}`)
+        
+        const ageInmilisseconds: number =Date.now() - dateOfBirth.getTime()
+       const ageINyEARS:Number = ageInmilisseconds / 1000 / 60 / 60 / 24 / 365
+       if(ageINyEARS <18){
+           res.statusCode = 406
+           throw new Error("idade deve ser maior que 18 anos !")
+       }
 
-
-
-//adicionar saldo 
-app.put("/adicionarSaldo", (req: Request, res: Response) => {
-
-
+        accounts.push({
+            name: name,
+            cpf,
+            dateOfBirth,
+            balance: 0,
+            statement: []
+        })
+        res.status(201).send("CONTA CRIADA COM SUCESSO!")
+    } catch (error: any) {
+        console.log(error);
+        res.send(error.message)
+    }
 })
+
+app.get("/users/all", (req: Request, res: Response) => {
+    try {
+        if (!accounts.length) {
+            res.statusCode = 404
+            throw new Error("nenhuma conta encontrada")
+        }
+
+        res.status(200).send(accounts)
+    } catch (error: any) {
+        res.send(error.message)
+    }
+})
+
+
 */
 
 
@@ -120,6 +164,21 @@ app.put("/adicionarSaldo", (req: Request, res: Response) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// usado para deixar o o pc como servidor!
 app.listen(3003, function () {
     console.log("Tô rodando!");
 });
