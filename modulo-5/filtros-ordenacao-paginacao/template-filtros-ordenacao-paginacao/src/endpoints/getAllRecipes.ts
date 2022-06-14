@@ -78,10 +78,8 @@ export const getFiltrarNome = async (req: Request, res: Response): Promise<void>
          .where("buscaNome", "like", `%${buscaNome}%`)
       const filtroResultado = resultado.map(toResultado)
       res.status(200).send(filtroResultado)
-   } catch (error : any) {
-      res.status(500).send({
-         message: error.message || "Aconteceu algo inesperado"
-      })
+   } catch (error) {
+      res.status(500).send(error)
 
    }
 }
