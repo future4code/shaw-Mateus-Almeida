@@ -1,0 +1,37 @@
+# @name signup
+
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "Norman Osbourne", 
+   "nickname": "Green Goblin", 
+   "email": "yellow@oscorp.com" ,
+   "password": "ihateperter",
+   "role": "ADMIN"
+}
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "red@oscorp.com" ,
+   "password": "ihateperter"
+}
+
+
+###
+
+@tokenAdmin = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1MmExMzA2LTgzNWEtNGU3ZC1hNjkzLTIwNTAzNmY0ZDNmOCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1NjQyNDE0Nn0.0VrkyNo52PatVe2BUoB981srV2x-wg5UP_IVBHi3dOc
+@tokenUser = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ZmVjYjlhLWYzYmQtNDdmMS05NzBkLTk2NzIyZWI3ZmEyNiIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTY0MjQxNjV9.byT52LARJyHj5WFs2e59EDxD1GeL9lcP5D7RfMPmbFk
+
+PUT http://localhost:3003/user/edit
+Authorization: {{tokenAdmin}}
+Content-Type: application/json
+
+{
+   "name": "NOME" 
+}
+
+###
+GET http://localhost:3003/user/profile
