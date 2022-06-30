@@ -20,7 +20,7 @@ sempre que quiser chamar a clase para conectar ao banco vou usar a funcao >>>
 
      
 
-                    baseDataBase.connection()
+                  
 
 
 
