@@ -1,0 +1,15 @@
+{
+  // o tsconfg deve manter esses arquivos como padrão 
+  "compilerOptions": {
+    "module": "commonjs",                                
+     "rootDir": "./src",   
+     "outDir": "./build",                             
+    "sourceMap": true,                                
+    "removeComments": true,                         
+    "esModuleInterop": true,                                                
+    "forceConsistentCasingInFileNames": true,           
+    "strict": true,                                      
+     "noImplicitAny": true,                            
+    "skipLibCheck": true                                
+  }
+}
