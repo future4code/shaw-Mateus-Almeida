@@ -1,4 +1,4 @@
-import { connection } from "../connection"
+/*import { connection } from "../connection"
 import { user } from "../types/user"
 
 export const selectUserByEmail = async (
@@ -22,3 +22,4 @@ export const selectUserByEmail = async (
       throw new Error(error.slqMessage || error.message)
    }
 }
+*/

@@ -1,4 +1,4 @@
-import { connection } from "../connection"
+/*import { connection } from "../connection"
 import { user } from "../types/user"
 
 class UserData{
@@ -17,3 +17,4 @@ class UserData{
 }
 
 export default UserData
+*/

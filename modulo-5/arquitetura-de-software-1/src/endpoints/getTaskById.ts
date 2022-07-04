@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+/*import { Request, Response } from "express";
 import {selectTaskById} from "../data/selectTaskById";
 
 export const getTaskById = async (
@@ -31,3 +31,4 @@ export const getTaskById = async (
       res.status(400).send(error.message)
    }
 }
+*/

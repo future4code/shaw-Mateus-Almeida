@@ -1,4 +1,4 @@
-import { generateToken } from "../services/authenticator";
+ /*import { generateToken } from "../services/authenticator";
 import { hash } from "../services/hashManager";
 import { generateId } from "../services/idGenerator";
 import { userInput } from "../types/user";
@@ -59,3 +59,4 @@ class UserBussines {
 }
 
 export default UserBussines
+*/

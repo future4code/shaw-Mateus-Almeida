@@ -1,4 +1,4 @@
-import { connection } from "../connection";
+/*import { connection } from "../connection";
 
 export const selectTaskById = async (
    id: string
@@ -12,3 +12,4 @@ export const selectTaskById = async (
 
    return result[0][0]
 }
+*/

@@ -1,4 +1,4 @@
-export enum USER_ROLES {
+/*export enum USER_ROLES {
    NORMAL = 'NORMAL',
    ADMIN = 'ADMIN'
 }
@@ -24,3 +24,4 @@ export type userInput = {
    password: string,
    role: USER_ROLES
 }
+*/

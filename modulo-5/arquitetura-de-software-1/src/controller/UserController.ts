@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+/*import { Request, Response } from "express";
 import UserBussines from "../Bussines/UserBussines";
 import {userInput } from "../types/user";
 
@@ -35,3 +35,4 @@ class UserController {
 }
 
 export default UserController
+*/

@@ -1,4 +1,4 @@
-import { Request, Response } from "express"
+/*import { Request, Response } from "express"
 import {selectUserByEmail} from "../data/selectUserByEmail"
 import { generateToken } from "../services/authenticator"
 import { compare } from "../services/hashManager"
@@ -41,3 +41,4 @@ export const login = async (
       res.status(400).send(error.message)
    }
 }
+*/

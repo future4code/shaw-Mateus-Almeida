@@ -1,4 +1,4 @@
-import { connection } from "../connection";
+ /*import { connection } from "../connection";
 import { user } from "../types/user";
 
 export const insertUser = async(
@@ -13,3 +13,4 @@ export const insertUser = async(
       role: user.role
    }).into('to_do_list_users')
 }
+*/

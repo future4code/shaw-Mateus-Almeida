@@ -1,4 +1,4 @@
-import { app } from "./app"
+/*import { app } from "./app"
 import { createTask } from '../endpoints/createTask'
 import { getTaskById } from '../endpoints/getTaskById'
 import UserController from "./UserController"
@@ -14,5 +14,5 @@ app.post('/user/login', userController.login)
 app.put('/task', createTask)
 app.get('/task/:id', getTaskById)
 
-
+*/
 

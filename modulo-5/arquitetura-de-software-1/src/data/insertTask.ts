@@ -1,4 +1,4 @@
-import { connection } from "../connection";
+/*import { connection } from "../connection";
 import { task } from "../types/task";
 
 export const insertTask = async (
@@ -13,3 +13,4 @@ export const insertTask = async (
          author_id: task.authorId
       })
 }
+*/

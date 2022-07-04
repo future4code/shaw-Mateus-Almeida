@@ -1,4 +1,4 @@
-import * as jwt from "jsonwebtoken"
+/*import * as jwt from "jsonwebtoken"
 import { authenticationData } from "../types/user"
 import dotenv from 'dotenv'
 
@@ -24,3 +24,4 @@ export const getTokenData = (
       process.env.JWT_KEY as string
    ) as authenticationData
 }
+*/

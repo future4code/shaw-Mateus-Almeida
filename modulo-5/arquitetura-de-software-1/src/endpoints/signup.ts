@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+/*import { Request, Response } from "express";
 import { insertUser } from "../data/insertUser";
 import { generateToken } from "../services/authenticator";
 import { hash } from "../services/hashManager";
@@ -26,3 +26,4 @@ export const signup = async (
       res.status(400).send(error.message)
    }
 }
+*/
