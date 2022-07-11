@@ -1,143 +1,107 @@
-
-// 1
-describe("teste de compra da performpurchase" ,()=>{
-    test("meu primeiro teste",()=>{
-
+describe("teste exercicio 1", ()=>{
+    test("meu primeiro teste ", ()=>{
         interface User {
-            name: string
+            name: string, 
             balance: number
         }
-        // funçao que ira compara se a pessoa pode ou nao comprar um item pelo dinheiro que ela tem na carteira
-        function performPurchase(user: User, value: number): User | undefined {
-            if(user.balance >= value) {
-                return {
-                    ...user,
-                    balance: user.balance - value		
-                }
+        function comparacaoLimite ( user: User , value : number): User | undefined{
+            return {
+                ...user,
+                balance: user.balance - value
             }
-            return undefined
         }
-                //performPurchase( "mateus", 17) nao entendi ainda como irei voltar os parametros 
-
-            // quando eu crio ele assim ele funciona chamando o teste e comparando com a propia funçao que passa os valores
-                // porem imagino que nao seria assim que deveria ser feito !
-             expect(performPurchase).toEqual(performPurchase)
-        
-
-
-
-             // tentar entender se deve ser feito junto ou separado os testes r: sera junto pela as funçoes que estçao chamando 
-             // 2
-             test("Testing balance greater than value", () => {
-                const user: User = {
-                    name: "Astrodev",
-                    balance: 50
-                }
-            
-                const result = performPurchase(user, 50)
-                
-                expect(result).toEqual({
-                    ...user,
-                    balance: 0
-                })
-            })
-            // a
-            // passou o test e mostrou o que o usuario ira receber 
-            
-            test("Testing balance greater than value", () => {
-                const user: User = {
-                    name: "Astrodev",
-                    balance: 50
-                }
-            
-                const result = performPurchase(user, 50)
-                // chamou o resultado passando o user e o balance
-                expect(result).toEqual({
-                    ...user,
-                    balance: 0
-                })
-                // o que estava esperando foi o resultado contendo o user e balance 
-              // e passou o balance 
-            })
-                    // b
-            test("Testing balance greater than value", () => {
-                const user: User = {
-                    name: "Astrodev",
-                    balance: 30
-                }
-            
-                const result = performPurchase(user, 50)
-                
-                expect(result).not.toBeDefined()
-            })
-
-
+        // criei a logica seguindo a parte de comparacao para saber valor e se a pessoa conseguira comprar 
+// agora irei tentar fazer o teste para ver se a pessoa  tem o limite 
+// e tentarei chamar as funçoes por callback
+  test("testando se tem caixa ", ()=>{
+    const user: User ={
+        name: "mateus",
+        balance: 80
+    }
+    const resultado = comparacaoLimite(user , 50)
+    expect(resultado).toEqual({
+        ...user, 
+        balance: 0
+    })
+  })
     })
 })
 
-// exercicio feito na aula , usar como referencia!
+/*
 
-/*import { connection, filtraPessoa, pessoas, retornarPrimeiraPessoa, trataErro } from "../src"
+ sempre que rodo o teste acima eu consigo esse erro
 
-describe("Meu primeiro teste", () => {
+ > jest-template@1.0.0 test
+> jest
 
-    test("Esse teste vai verificar uma string", () => {
-        const nome: string = "rodrigo"
+ FAIL  tests/index.test.ts
+  ● teste exercicio 1 › meu primeiro teste 
 
-        expect(nome).toBe("rodrigo")
+    Tests cannot be nested. Test "testando se tem caixa " cannot run because it is nested within "meu primeiro teste ".
 
-    })
+      14 | // agora irei tentar fazer o teste para ver se a pessoa  tem o limite 
+      15 | // e tentarei chamar as funçoes por callback
+    > 16 |   test("testando se tem caixa ", ()=>{
+         |   ^
+      17 |     const user: User ={
+      18 |         name: "mateus",
+      19 |         balance: 80
 
-    test("Teste de objeto", () => {
-        const pessoa = {
-            id: 123,
-            nome: "fulano"
-        }
+      at eventHandler (node_modules/jest-circus/build/eventHandler.js:183:11)
+      at Object.<anonymous> (tests/index.test.ts:16:3)
 
-        expect(pessoa).toEqual({
-            id: 123,
-            nome: "fulano"
-        })
+ FAIL  tests/index1.test.ts
+  ● Test suite failed to run
 
-    })
+    Your test suite must contain at least one test.
 
-    test("filtrando uma pessoa",()=>{
+      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
+      at node_modules/@jest/core/build/TestScheduler.js:316:17
+      at node_modules/emittery/index.js:260:13
+          at Array.map (<anonymous>)
+      at Emittery.emit (node_modules/emittery/index.js:258:23)
 
-        const pessoaFiltrada = filtraPessoa(pessoas,123)
+Test Suites: 2 failed, 2 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        3.386 s
+Ran all test suites.
+mateus@Mateus-DEV:~/Área de Trabalho/mateus/shaw-Mateus-Almeida/modulo-5/testes-automatizados-javascript$ npm run test
 
-        expect(pessoaFiltrada).toBe({id:123,nome:"Fulano"})
-    })
+> jest-template@1.0.0 test
+> jest
 
-    test("usando o not", () => {
-        const numero = 10
+ FAIL  tests/index.test.ts
+  ● teste exercicio 1 › meu primeiro teste 
 
-        expect(numero).not.toBe(5)
-    })
+    Tests cannot be nested. Test "testando se tem caixa " cannot run because it is nested within "meu primeiro teste ".
 
-    // teste assincronos
-    test("valida funcoes assincronas , buscando a primeira pessoa da tabela user", async () => {
-        try {
-            const result = await retornarPrimeiraPessoa()
-            
-        } catch (error:any) {
-            
-            expect(error.message).toEqual("ER_NO_SUCH_TABLE: Table 'teacher-gabriel-mina.user2' doesn't exist")
-        }
+      14 | // agora irei tentar fazer o teste para ver se a pessoa  tem o limite 
+      15 | // e tentarei chamar as funçoes por callback
+    > 16 |   test("testando se tem caixa ", ()=>{
+         |   ^
+      17 |     const user: User ={
+      18 |         name: "mateus",
+      19 |         balance: 80
 
-    })
+      at eventHandler (node_modules/jest-circus/build/eventHandler.js:183:11)
+      at Object.<anonymous> (tests/index.test.ts:16:3)
 
-    // teste de falso positivo
-    test("tratativa de erro",()=>{
-        expect.assertions(1)
-        try {
-            const error = trataErro("123","")
-        } catch (error) {
-            if(error instanceof Error){
-                expect(error.message).toEqual("Esta faltando parametros")   
-            }
-        }
-    })
+ FAIL  tests/index1.test.ts
+  ● Test suite failed to run
 
-})
+    Your test suite must contain at least one test.
 
+      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
+      at node_modules/@jest/core/build/TestScheduler.js:316:17
+      at node_modules/emittery/index.js:260:13
+          at Array.map (<anonymous>)
+      at Emittery.emit (node_modules/emittery/index.js:258:23)
+
+Test Suites: 2 failed, 2 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        2.85 s, estimated 3 s
+Ran all test suites.
 */
+// nao entendi o porque da funçao de teste esta dando erro 
