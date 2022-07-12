@@ -21,7 +21,7 @@ describe("teste exercicio 1", ()=>{
     const resultado = comparacaoLimite(user , 50)
     expect(resultado).toEqual({
         ...user, 
-        balance: 0
+        balance: 30
     })
   })
     })
