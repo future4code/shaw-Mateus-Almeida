@@ -7,7 +7,7 @@ import { navigate, useNavigate } from "react-router-dom"
 //import { goToFeed } from "../../Routes/coordinator";
 import axios from "axios";
 import { BASE_URL } from "../../Constants/url";
-import goToFeed from "../../Routes/coordinator";
+import goToFeed, { goToSingUp } from "../../Routes/coordinator";
 
 const Login = () => {
   // criei o email e password para setar os valores
@@ -45,7 +45,8 @@ const Login = () => {
         setPassword('')
         console.log(res.data);
         localStorage.setItem('token', res.data.token)
-        goToFeed(navigate)
+        // mundar depois para mandar para o feed de restaurante
+        goToSingUp(navigate)
         alert("bem vindo")
         
 
