@@ -15,9 +15,11 @@ const Router = () => {
           <Route index element ={<Login/>}/>
           <Route path="/singUp" element={<SingUp/>}/>
           <Route path="/singUp/adress" element={<SingUpAdress/>}/>
+          <Route path="/adressEdit/:id" element={<adressEdit/>}/>
           <Route path="/feed" element={<Feed/>}/>
           <Route path="/feed/:restaurantId" element={<Restaurant/>}/>
           <Route path="/profile" element={<Profile/>}/>
+          <Route path="/profile/:id" element={<goToProfileEdit/>}/>
           <Route path="/cart" element={<Cart/>}/>
 
         </Routes>

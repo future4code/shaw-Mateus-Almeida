@@ -12,4 +12,3 @@ export  const useForm = (initialState) => {
     }
     return { form, onChange, clean }
 }
-export default useForm
