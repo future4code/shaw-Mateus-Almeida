@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const ContainerHeader = styled.div`
 width: 90%;
-border: 1px solid black;
+border: 1px solid white;
 height: 2.75rem;
 display: grid;
 grid-template-columns: 24px 1fr 24px;

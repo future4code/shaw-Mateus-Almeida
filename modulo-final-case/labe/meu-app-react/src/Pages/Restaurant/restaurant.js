@@ -8,10 +8,13 @@ import ProdutoCard from "../../Components/ProdutosCard/ProdutosCard";
 import { BASE_URL } from "../../Constants/url";
 import {  ConteinerRestaurant, CardRestaurant, SectionProductByCategory } from "./styled";
 import Header from "../../Components/Headers/Headers";
+import { useGlobal } from "../../Context/Global/GlobalStateContext";
 const Restaurant = () => {
     const { restaurantId } = useParams()
     const [restaurant, setRestaurant] = useState({})
     const [categories,setCategories]=useState([])
+
+
     const getRestaurants = () => {
         axios.get(`${BASE_URL}/restaurants/${restaurantId}`, {
             headers: {
@@ -68,7 +71,10 @@ const Restaurant = () => {
 
                             .map((product)=>{
                                 //return <CardProduct product={product}/>
-                                return <ProdutoCard product={product} key={product.id}
+                                return <ProdutoCard 
+                                product={product}
+                                 key={product.id}
+                              
                                 />
                         })
                     }

@@ -11,6 +11,7 @@ justify-content: center;
 align-items: center;
 `
 export const CartConfig =styled.div`
+margin-top: 20px;
 display: flex;
 flex-direction: column;
 align-items: center;

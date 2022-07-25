@@ -8,6 +8,7 @@ import { useForm } from "../../Hooks/useForm";
 import { ButtonStyled, Form, Principal } from "../SingUp/styled";
 import { Navigate, navigate, useNavigate } from "react-router-dom";
 import { goToFeed } from "../../Routes/coordinator";
+import Header from "../../Components/Headers/Headers";
 // feito por mateus
 export default function Endereco() {
     const navigate = useNavigate()
@@ -57,11 +58,18 @@ const {form , onChange,clean}= useForm({
 
     return (
         <Principal>
-            <button > Voltar </button>
-            <p> meu endereco</p>
-            <br></br><br></br><br></br><br></br>
+             <Header back/>
+          
+            <p> <strong>Meu Endereço</strong></p>
+          
 
             <Form onSubmit={onSubmitFormAdress}>
+             
+                 <br></br><br></br><br></br><br>
+                </br><br></br><br></br><br></br>
+                <br></br><br></br><br></br>
+                <br></br><br></br><br></br>
+                
                 <TextField
 
                     placeholder="Rua/av"
@@ -72,8 +80,10 @@ const {form , onChange,clean}= useForm({
                     type={"text"}
                     id="outlined-basic"
                     variant="outlined"
+                    required
 
                 />
+                <br></br>
                 <TextField
                     placeholder="Numero"
                     value={form.number}
@@ -83,7 +93,9 @@ const {form , onChange,clean}= useForm({
                     type={"text"}
                     id="outlined-basic"
                     variant="outlined"
+                    required
                 />
+                <br></br>
                 <TextField
                     placeholder="apto/bloco"
                     value={form.neighbourhood}
@@ -93,8 +105,10 @@ const {form , onChange,clean}= useForm({
                     type={"text"}
                     id="outlined-basic"
                     variant="outlined"
+                    required
 
                 />
+                <br></br>
                 <TextField
                     placeholder="bairro"
                     value={form.city}
@@ -104,8 +118,10 @@ const {form , onChange,clean}= useForm({
                     type={"text"}
                     id="outlined-basic"
                     variant="outlined"
+                    required
 
                 />
+                <br></br>
                 <TextField
                     placeholder="cidade"
                     value={form.complement}
@@ -115,8 +131,10 @@ const {form , onChange,clean}= useForm({
                     type={"text"}
                     id="outlined-basic"
                     variant="outlined"
+                    required
 
                 />
+                <br></br>
                 <TextField
                     placeholder="estado"
                     value={form.state}
@@ -126,8 +144,10 @@ const {form , onChange,clean}= useForm({
                     type={"text"}
                     id="outlined-basic"
                     variant="outlined"
+                    required
 
                 />
+                <br></br>
                 <ButtonStyled type={`submit`}>salvar</ButtonStyled>
             </Form>
         </Principal>

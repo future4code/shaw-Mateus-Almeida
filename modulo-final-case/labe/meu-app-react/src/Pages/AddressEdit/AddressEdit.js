@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../../Components/Headers/Headers";
 
-const Profile = () => {
+const AddressEdit = () => {
     return (
     
         <div>
-                <Header title={"meu perfil"}/>
+                <Header title={"Editar "}vback/>
             Profile
         </div>
     )
 }
-export default Profile
+export default AddressEdit

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Principal, Form, ButtonStyled } from './styled'
+import { Principal, Form, ButtonStyled, ButtonCliqueAki, CliqueAkiDiv, ImagemLogo } from './styled'
 import TextField from '@mui/material/TextField'
 
-import { navigate, useNavigate } from "react-router-dom"
+import { Navigate, navigate, useNavigate } from "react-router-dom"
 
-//import { goToFeed } from "../../Routes/coordinator";
+import { goToFeed } from "../../Routes/coordinator";
 import axios from "axios";
 import { BASE_URL } from "../../Constants/url";
-import goToFeed, { goToSingUp } from "../../Routes/coordinator";
+import  { goToLogin, goToSingUp } from "../../Routes/coordinator";
 
 const Login = () => {
   // criei o email e password para setar os valores
@@ -16,6 +16,7 @@ const Login = () => {
   const [errEmail, setErrEmail] = useState('')
   const [errPass, setErrPass] = useState('')
   const navigate = useNavigate()
+  const novaNavigate =useNavigate()
   /*
   const onEmail =(event)=>{
    setEmail(event.target.value)
@@ -43,10 +44,12 @@ const Login = () => {
       .then((res) => {
         setEmail('')
         setPassword('')
+        
         console.log(res.data);
         localStorage.setItem('token', res.data.token)
         // mundar depois para mandar para o feed de restaurante
-        goToSingUp(navigate)
+        goToFeed(navigate)
+       //goToSingUp(navigate)
         alert("bem vindo")
         
 
@@ -57,7 +60,9 @@ const Login = () => {
       })
   }
   return (
+    <div>
     <Principal>
+      <ImagemLogo src={"https://cdn.zeplin.io/5dd5ab8e5fb2a0060f81698f/assets/2420CEFD-BBDE-49C8-91E3-A49B116851E9.svg"}/>
       <p> Entrar</p>
       <Form onSubmit={onSubimitFazendoLogin}>
 
@@ -72,6 +77,7 @@ const Login = () => {
           variant="outlined"
           onChange={(event) => setEmail(event.target.value)}
         />
+        <br></br>
         <TextField
           value={password}
 
@@ -82,17 +88,29 @@ const Login = () => {
           variant="outlined"
           onChange={(event) => setPassword(event.target.value)}
         />
+        <br></br>
 
         <ButtonStyled
           type={"submit"}
+          
         >
 
           Entrar
         </ButtonStyled>
-
+       
       </Form>
 
+
+      
     </Principal>
+    <CliqueAkiDiv>
+    <h4>Não possui cadastro?</h4>
+      <ButtonCliqueAki ><strong>Clique aki</strong></ButtonCliqueAki>
+      
+      
+ 
+      </CliqueAkiDiv>
+      </div>
   )
 }
 export default Login

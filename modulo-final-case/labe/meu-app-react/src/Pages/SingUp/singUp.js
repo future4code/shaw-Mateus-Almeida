@@ -3,10 +3,11 @@ import { Alert, TextField } from "@mui/material";
 import axios from "axios";
 import React, { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import Header from "../../Components/Headers/Headers";
 import { BASE_URL } from "../../Constants/url";
 import { useForm } from "../../Hooks/useForm";
 import { goToSingUpAdress } from "../../Routes/coordinator";
-import { Principal, Form, ButtonStyled } from './styled'
+import { Principal, Form, ButtonStyled, ImagemLogo, CliqueAkiDiv } from './styled'
 
 const SingUp = () => {
     const [password, setPassword] = useState('')
@@ -45,10 +46,13 @@ const SingUp = () => {
 
     return (
         <Principal>
-            <p> Cadastrar</p>
+            <Header back/>
+            <CliqueAkiDiv>
+            <ImagemLogo src={"https://cdn.zeplin.io/5dd5ab8e5fb2a0060f81698f/assets/2420CEFD-BBDE-49C8-91E3-A49B116851E9.svg"}/>
+            </CliqueAkiDiv>
+            <h4> Cadastrar</h4>
             <br></br><br></br><br></br><br></br>
-
-
+            
             <Form onSubmit={onSubmitForm}>
                 <TextField
                     id="outlined-basic"
@@ -59,10 +63,12 @@ const SingUp = () => {
                     variant="outlined"
                     value={form.name}
                     onChange={onChange}
+                   
                 />
+                 <br></br>
                 <TextField
                     id="outlined-basic"
-                    label={"email"}
+                    label={"Email"}
                     name="email"
                     type={"email"}
                     placeholder={"digite seu email"}
@@ -71,9 +77,10 @@ const SingUp = () => {
                     onChange={onChange}
                     required
                 />
+                 <br></br>
                 <TextField
                     id="outlined-basic"
-                    label={"cpf"}
+                    label={"CPF"}
                     name="cpf"
                     type={"text"}
                     // testar se o patern ira funcionar para o cpf
@@ -84,9 +91,10 @@ const SingUp = () => {
                     onChange={onChange}
                     required
                 />
+                 <br></br>
                 <TextField
                     id="outlined-basic"
-                    label={"password"}
+                    label={"Password"}
                     name="password"
                     type={"password"}
                     placeholder={"digite seu senha"}
@@ -97,9 +105,10 @@ const SingUp = () => {
 
 
                 />
+                 <br></br>
                 <TextField
                     id="outlined-basic"
-                    label={"confirmar senha "}
+                    label={"Confirmar senha "}
                     name="password"
                     type={"password"}
                     placeholder={"digite seu senha"}
@@ -110,6 +119,7 @@ const SingUp = () => {
 
 
                 />
+                 <br></br>
 
 
 

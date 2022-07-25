@@ -30,3 +30,16 @@ export const ButtonStyled = styled(Button)`
     background-color:#E8222E;
     }
 `
+export const CliqueAkiDiv =styled.div`
+display: flex; 
+
+
+`
+export const ImagemLogo =styled.img`
+display: flex;
+width: 8rem;
+margin-top: 4%;
+
+
+
+`

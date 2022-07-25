@@ -8,6 +8,7 @@ height: 100vh;
 display: flex;
 flex-direction: column;
 align-items: center;
+
 P{
     font-size: 2rem;
 }
@@ -20,6 +21,7 @@ width:90%;
 justify-content: space-evenly;
 
 
+
 `
 export const ButtonStyled = styled(Button)`
 &&{
@@ -27,4 +29,7 @@ export const ButtonStyled = styled(Button)`
     width:100%;
     background-color:#E8222E;
     }
+`
+export const DivEndereco =styled.div`
+display: flex
 `
