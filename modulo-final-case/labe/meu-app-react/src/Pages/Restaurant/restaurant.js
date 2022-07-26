@@ -74,6 +74,7 @@ const Restaurant = () => {
                                 return <ProdutoCard 
                                 product={product}
                                  key={product.id}
+                                 restaurant={restaurant}
                               
                                 />
                         })

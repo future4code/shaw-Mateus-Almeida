@@ -105,7 +105,7 @@ const Login = () => {
     </Principal>
     <CliqueAkiDiv>
     <h4>Não possui cadastro?</h4>
-      <ButtonCliqueAki ><strong>Clique aki</strong></ButtonCliqueAki>
+      <ButtonCliqueAki onClick={()=>goToSingUp(navigate)} ><strong>Clique aki</strong></ButtonCliqueAki>
       
       
  

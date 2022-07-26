@@ -1,22 +1,36 @@
 import { useState } from "react"
 import GlobalStateContext from "./GlobalStateContext"
 
-const GlobalState = ({ Children }) => {
+const GlobalState = ({ children }) => {
     const [cart, setCart] = useState([])
-    const addToCart = (product, quantity) => {
+    const [restaurant, setRestaurant] = useState({})
+    const addToCart = (product, quantity, newRestaurant) => {
+             if(newRestaurant.id === restaurant.id){
+               
         setCart([...cart, { ...product, quantity }])
+        
+        }else {
+                setCart([{ ...product, quantity }])
+                setRestaurant(newRestaurant)
+        }
+    }
+    const removeToCart = (id) => {
+        const index = cart.findIndex((product)=> product.id === id)
+        const newCart =[...cart]
+        newCart.splice(index, 1)
+        setCart(newCart)
     }
    // console.log(addToCart());
    //console.log(GlobalState);
-    console.log(cart);
+   // console.log(cart);
     const states = { cart }
-    const requests = {addToCart}
+    const requests = {addToCart, removeToCart}
     const setters = {}
 
 
     return (
         <GlobalStateContext.Provider value={{ states, requests, setters }}>
-            {Children}
+            {children}
         </GlobalStateContext.Provider>
     )
 }
