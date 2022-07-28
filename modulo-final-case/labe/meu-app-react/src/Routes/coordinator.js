@@ -15,6 +15,9 @@ export const goToBack =(navigate)=>{
 export const goToSingUp = (navigate) => {
      navigate("/singUp")
 }
+export const goToCart = (navigate) => {
+     navigate("/cart")
+}
 
 export const goToSingUpAdress = (navigate) => {
      navigate("/singUp/adress")

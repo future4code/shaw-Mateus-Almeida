@@ -3,6 +3,7 @@ import Cart from "../Pages/Cart/cart"
 import Feed from "../Pages/Feed/feed"
 import Login from "../Pages/Login/login"
 import Profile from "../Pages/Profile/profile"
+import ProfileEddit from "../Pages/ProfileEdit/ProfileEdit"
 import Restaurant from "../Pages/Restaurant/restaurant"
 import SingUp from "../Pages/SingUp/singUp"
 import SingUpAdress from "../Pages/SingUpAdress/signUpAdress"
@@ -20,7 +21,7 @@ const Router = () => {
          
           <Route path="/feed/:restaurantId" element={<Restaurant/>}/>
           <Route path="/profile" element={<Profile/>}/>
-          <Route path="/profile/:id" element={<goToProfileEdit/>}/>
+          <Route path="/profile/:id" element={<ProfileEddit/>}/>
           <Route path="/cart" element={<Cart/>}/>
 
         </Routes>

@@ -90,3 +90,16 @@ input{
     width: 20%;
 }
 `
+export const CardProduto = styled.div`
+width: 100%;
+height:15.2rem ;
+margin: 0.5rem 0;
+display:flex;
+border: 1px solid black;
+border-radius: 7px;
+
+
+`
+export const CardCartProduct = styled.div`
+width: 100%;
+`

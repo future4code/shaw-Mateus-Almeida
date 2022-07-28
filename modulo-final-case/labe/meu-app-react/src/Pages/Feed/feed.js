@@ -7,6 +7,7 @@ import ContainerFeed, { CardsRestaurant } from "./styled";
 import CardRestaurante from "../../Components/CardRestaurante/CardRestaurante";
 import Header from "../../Components/Headers/Headers";
 import { Category } from "@mui/icons-material";
+import  MenuMain from '../../Components/Menu/Menu'
 const Feed = () => {
     const [restaurantes, setRestaurantes] = useState([])
     const [categoryRestaurant, setCategoryRestaurant] = useState([])
@@ -121,6 +122,7 @@ const changeCategory =(category)=>{
                 {filtrandoRestaurante}
 
             </CardsRestaurant>
+            <MenuMain page={"home"}/>
         </ContainerFeed>
     )
 }

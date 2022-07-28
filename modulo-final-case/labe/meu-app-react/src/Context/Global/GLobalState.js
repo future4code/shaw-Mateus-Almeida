@@ -14,6 +14,7 @@ const GlobalState = ({ children }) => {
                 setRestaurant(newRestaurant)
         }
     }
+    console.log(cart);
     const removeToCart = (id) => {
         const index = cart.findIndex((product)=> product.id === id)
         const newCart =[...cart]
