@@ -4,7 +4,7 @@ import LotoFacil from "../Lotofacil/LotoFacil";
 import LotoMania from "../LotoMania/LotoMania";
 import Megasena from "../Mega-sena/MegaSena";
 import Quina from "../Quina/Quina";
-import TimeMania from "../TImeMania/styled";
+import TimeMania from "../TimeMania/TimeMania";
 
 
 export default function Router() {

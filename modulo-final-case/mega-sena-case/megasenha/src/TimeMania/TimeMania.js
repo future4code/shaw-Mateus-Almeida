@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 import axios, { Axios } from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -6,9 +13,10 @@ import { DivPai, LogoStyled, MegaLetra, Numeros, NumeroSorteados, PosicionandoBo
 
 
 
-const LotoFacil = () => {
+const TimeMania = () => {
 
     const navigate = useNavigate()
+
     // --------------------PARTE-RESPOSAVEL-PELA-TROCA-DE-PAGE-------------
     const [pagina, setPagina] = useState("")
     console.log(pagina);
@@ -46,21 +54,24 @@ const LotoFacil = () => {
             <div>
                 <PosicionandoBotao>
                     <select id="selecionar" onChange={selecionadoPage}>
-                        <option value="LotoFacil"> LotoFacil</option>
-                        <option value="MegaSena" > Mega-sena</option>
-                        <option value="Quina"> Quina</option>
 
+                        <option value="TimeMania"> TimeMania</option>
+                        <option value="Quina" > Quina</option>
+                        <option value="MegaSenha" > Mega-sena</option>
+
+                        <option value="LotoFacil"> LotoFacil</option>
                         <option value="LotoMania"> LotoMania</option>
-                        <option value="TimeMania"> TImeMania</option>
                         <option value="DiaDeSorte" > DiaDeSorte</option>
 
                     </select>
                 </PosicionandoBotao>
-
             </div>
             <LogoStyled />
-            <MegaLetra>LotoFacil</MegaLetra>
+            <MegaLetra>TimeMania</MegaLetra>
         </ DivPai>
     )
 }
-export default LotoFacil
+export default TimeMania
+
+
+

@@ -1,52 +1,35 @@
 import styled from "styled-components";
+import {ReactComponent as Logo} from '../Imagens/Sena.svg'
 
+export const LogoStyled =styled(Logo)`
+background-color: rgb(107, 239, 163);
+margin-left:40%;
+margin-top: 6%
 
+`
+
+export const MegaLetra =styled.h1`
+background-color: rgb(107, 239, 163);
+margin-left:24%;
+margin-top: 1%;
+font-family: Montserrat;
+font-weight: 700;
+size: 30px;
+color: white;
+`
 
  export const DivPai =styled.div`
-display: flex;
-width: 100vw;
-height: 100vh;
-justify-content:center;
-overflow-x:none;
-margin-left: -2%;
-margin-top: -3%;
+ width: 99.9vw;
+height: 99.9vh;
+background-color: rgb(107, 239, 163);
+position: fixed; top: 0; left: 0;
+`
+export const PosicionandoBotao =styled.div`
 
+display: flex;
+margin-left: 34%;
+margin-top: 12%;
 
 background-color: rgb(107, 239, 163);
 
-`
-export const SelecionandoJogo =styled.div`
-display: flex;
-justify-content:center;
-height: 4%;
-margin-top: 10%;
-border-radius: 20%;
-margin-left: 40%
-`
-export const NumeroSorteados = styled.div`
-border-radius: 18% 18% 0px 0px;
-//background-color: rgb(236, 236, 236);
-background-color: #EFEFEF;
-width: 100%;
-display: flex;
-margin-left: -70%;
-height: 55vh;
-margin-top: 80.5%
-
-
-`
-export const Numeros =styled.div`
-background-color: red;
-
-height: 50%;
-margin-top: 30%;
-border-radius: 50%;
-
-    display: flex;
-   align-items: center;
-   padding-left: 5%;
-    height: 40px;
-    width: 40px;
-    border: 1px solid #000000;
-    background-color: #FFFFFF;
 `
