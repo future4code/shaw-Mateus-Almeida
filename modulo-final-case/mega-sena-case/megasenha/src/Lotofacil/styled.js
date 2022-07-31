@@ -31,4 +31,28 @@ display: flex;
 margin-left: 34%;
 margin-top: 12%;
 `
+export const NumeroConcurso =styled.p`
+background-color: rgb(221, 122, 198);
+font-family: Montserrat;
+font-weight: 100;
+size: 20px;
+color: white;
+margin-left: 23%;
+margin-top:-3%
 
+`
+export const DivOndeIraOsNumero =styled.div`
+background-color: rgb(239, 239, 239);
+width: 100vw;
+height: 80vh;
+border-radius: 8%;
+display: flex;
+`
+
+export const LetraDeAviso =styled.p`
+font-weight: 40;
+display: flex;
+margin-top: 94%;
+margin-left: 3%
+
+`

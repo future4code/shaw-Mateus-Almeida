@@ -1,20 +1,26 @@
 import axios, { Axios } from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { goToDiaDeSorte, goToHome, goTolotoFacil, goToLotoMania, goToQuina, goToTimeMania } from "../routes/Cordinator";
-import { DivPai, LogoStyled, MegaLetra, Numeros, NumeroSorteados, PosicionandoBotao, SelecionandoJogo } from "./styled";
+import { DivOndeIraOsNumero, DivPai, LetraDeAviso, LogoStyled, MegaLetra, NumeroConcurso, Numeros, NumeroSorteados, PosicionandoBotao, SelecionandoJogo } from "./styled";
 
 
 
 const Megasena = () => {
+    // --USAR PARA CHAMAR O NOME DO JOGO 
 
+    const [nameSorteio, setNameSorteio] = useState({})
     const navigate = useNavigate()
- // --------------------PArte-RESPOSAVEL-PELA-TROCA-DE-PAGE-------------
+    // --------------------PArte-RESPOSAVEL-PELA-TROCA-DE-PAGE-------------
     const [pagina, setPagina] = useState("")
-    console.log(pagina);
+   // console.log(pagina);
     const selecionadoPage = (event) => {
         setPagina(event.target.value)
+        event.preventDefault()
     }
+
+
 
     useEffect(() => {
         switch (pagina) {
@@ -36,7 +42,44 @@ const Megasena = () => {
             default:
         }
     }, [pagina])
-    //---------------------REQUISIÇOES---------------------
+
+    //---------------------REQUISIÇOES-------------------------------------------------------------
+    // -------------- axios-PARA-PEGAR-OS-NOMES-DO-JOGOS---------------------------------------------
+
+    const [loterias, setLoterias] = useState([])
+    useEffect(() => {
+        axios.get('https://brainn-api-loterias.herokuapp.com/api/v1/loterias')
+            .then((res) => {
+                setLoterias(res.data)
+                //console.log(res.data);
+
+
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        return loterias
+    }, [])
+          console.log(loterias);
+
+    //----------------------------REQUISIÇOES-------------------------------------------------------
+    // -------------------ME-RETORNA-O-CONCURSO-E-ID-LOTERIA----------------------------------------
+    const [concurso, setConcurso] = useState([])
+
+    useEffect(() => {
+        axios.get('https://brainn-api-loterias.herokuapp.com/api/v1/loterias-concursos')
+            .then((res) => {
+                setConcurso(res.data)
+                //console.log(res.data);
+
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        return concurso
+    }, [])
+             console.log(concurso);
+
 
     return (
         < DivPai>
@@ -45,7 +88,7 @@ const Megasena = () => {
                 <PosicionandoBotao>
                     <select id="selecionar" onChange={selecionadoPage}>
                         <option value="MegaSenha" > Mega-sena</option>
-                        <option value="Quina"> Quina</option>
+                        <option value="Quina">Quina</option>
                         <option value="LotoFacil"> LotoFacil</option>
                         <option value="LotoMania"> LotoMania</option>
                         <option value="TimeMania"> TImeMania</option>
@@ -54,21 +97,75 @@ const Megasena = () => {
                     </select>
                 </PosicionandoBotao>
 
+
             </div>
             <LogoStyled />
             <MegaLetra>Mega-sena</MegaLetra>
+            <NumeroConcurso>Concurso Nº{}</NumeroConcurso>
+            
+            <DivOndeIraOsNumero >
+            <LetraDeAviso>
+                Este sorteio é meramente ilustrativo
+                e não possui nenhuma ligação com a CAIXA.
+            </LetraDeAviso>
+            </DivOndeIraOsNumero>
         </ DivPai>
     )
 }
 export default Megasena
 
 
+/*
+   ---------------------------
+   posivel requisiçao para pegar numero
+   const [numeros,setNumeros] = useState([])
+    const [informacao,setInformacao] = useState([])
+    useEffect (()=>{
+        
+            axios.get(`'https://brainn-api-loterias.herokuapp.com/api/v1/loterias/concursos/2359`)
+                .then((response) => {
+                    setInformacao(response.data)
+                    setNumeros(response.data.numeros)
+                })
+                .catch((error) => {
+                    console.log("Deu erro", error);
+                })   
+          
+    },[concurso])
+    return [numeros,informacao]
+
+
+          //---------------------REQUISIÇOES---------------------
+          // ------------ME-RETORNA-O-CONCURSO-E-ID-LOTERIA------
+        axios.get('https://brainn-api-loterias.herokuapp.com/api/v1/loterias-concursos')
+        .then((res) => {
+          
+             console.log(res.data);
+            
+         })
+         .catch((err) => {
+             console.log(err);
+         })
+
+
+      //---------------------REQUISIÇOES---------------------
+
+
+         
+     
+      axios.get("https://brainn-api-loterias.herokuapp.com/api/v1/concursos/430")
+      .then((res) => {
+          
+        console.log(res.data);
+       
+    })
+    .catch((err) => {
+        console.log(err);
+    })
 
 
 
-
-
-
+*/
 
 
 

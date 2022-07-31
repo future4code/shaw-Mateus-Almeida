@@ -2,7 +2,7 @@ import axios, { Axios } from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { goToDiaDeSorte, goToHome, goTolotoFacil, goToLotoMania, goToQuina, goToTimeMania } from "../routes/Cordinator";
-import { DivPai, LogoStyled, MegaLetra, Numeros, NumeroSorteados, PosicionandoBotao, SelecionandoJogo } from "./styled";
+import { DivOndeIraOsNumero, DivPai, LetraDeAviso, LogoStyled, MegaLetra, NumeroConcurso, Numeros, NumeroSorteados, PosicionandoBotao, SelecionandoJogo } from "./styled";
 
 
 
@@ -60,6 +60,13 @@ const DiaDeSorte = () => {
             </div>
             <LogoStyled />
             <MegaLetra>DiaDeSorte</MegaLetra>
+            <NumeroConcurso>Concurso Nº{}</NumeroConcurso>
+            <DivOndeIraOsNumero >
+            <LetraDeAviso>
+                Este sorteio é meramente ilustrativo
+                e não possui nenhuma ligação com a CAIXA.
+            </LetraDeAviso>
+            </DivOndeIraOsNumero>
         </ DivPai>
     )
 }
