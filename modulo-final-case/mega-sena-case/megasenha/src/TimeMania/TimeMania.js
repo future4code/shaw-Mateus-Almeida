@@ -19,7 +19,7 @@ const TimeMania = () => {
 
     // --------------------PARTE-RESPOSAVEL-PELA-TROCA-DE-PAGE-------------
     const [pagina, setPagina] = useState("")
-   //console.log(pagina);
+    //console.log(pagina);
     const selecionadoPage = (event) => {
         setPagina(event.target.value)
     }
@@ -48,7 +48,7 @@ const TimeMania = () => {
         }
     }, [pagina])
 
-      //---------------------REQUISIÇOES-------------------------------------------------------------
+    //---------------------REQUISIÇOES-------------------------------------------------------------
     // -------------- axios-PARA-PEGAR-OS-NOMES-DO-JOGOS---------------------------------------------
 
     const [loterias, setLoterias] = useState([])
@@ -65,7 +65,7 @@ const TimeMania = () => {
             .catch((err) => {
                 console.log(err);
             })
-      
+
     }, [])
     //--------------------------------------------------------------------------------
     //      console.log(loterias);
@@ -78,39 +78,39 @@ const TimeMania = () => {
     useEffect(() => {
         axios.get('https://brainn-api-loterias.herokuapp.com/api/v1/loterias-concursos')
             .then((res) => {
-               // console.log(res.data);
+                // console.log(res.data);
                 setConcursoId(res.data[4].concursoId)
                 setidDoConcurso(res.data[4].loteriaId)
-               
+
 
             })
             .catch((err) => {
                 console.log(err);
             })
-      
+
     }, [])
     //----------------------------------------------------------------------------------   
-       // console.log(idDoConcurso);
-    
-    
-  //  console.log(concursoId);
+    // console.log(idDoConcurso);
+
+
+    //  console.log(concursoId);
 
 
 
     const [numerosSorteios, setNumerosSorteios] = useState()
     useEffect(() => {
-    axios.get(`https://brainn-api-loterias.herokuapp.com/api/v1/concursos/${concursoId}`)
-        .then((res) => {
-            setNumerosSorteios(res.data.numeros)
-            //console.log(res.data);
+        axios.get(`https://brainn-api-loterias.herokuapp.com/api/v1/concursos/${concursoId}`)
+            .then((res) => {
+                setNumerosSorteios(res.data.numeros)
+                //console.log(res.data);
 
-        })
-        .catch((err) => {
-            console.log(err);
-        })
-       
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+
     }, [concursoId])
-  //console.log(numerosSorteios);
+    //console.log(numerosSorteios);
 
 
     return (
@@ -119,15 +119,15 @@ const TimeMania = () => {
             <div>
                 <PosicionandoBotao>
                     <select id="selecionar" onChange={selecionadoPage}>
-                    <option value="TimeMania"> {loterias}</option>
-                
-                <option value="Quina">Quina</option>
-                <option value="LotoMania"> lotoMania</option>
-                 <option value="LotoFacil"> LotoFacil</option>
-                 <option value="MegaSena" > MegaSena</option>
-                       
-                        
-                     
+                        <option value="TimeMania"> {loterias}</option>
+
+                        <option value="Quina">Quina</option>
+                        <option value="LotoMania"> lotoMania</option>
+                        <option value="LotoFacil"> LotoFacil</option>
+                        <option value="MegaSena" > MegaSena</option>
+
+
+
                         <option value="DiaDeSorte" > DiaDeSorte</option>
 
                     </select>
@@ -138,20 +138,20 @@ const TimeMania = () => {
             <LogoStyled />
             <MegaLetra>{loterias}</MegaLetra>
             <NumeroConcurso>Concurso Nº {concursoId}</NumeroConcurso>
-                 
 
-    
-                  
+
+
+
             <DivOndeIraOsNumero >
                 <NumeroCads>
-                {numerosSorteios ?.map((numero)=>{
-                    return(
-                        <NumeroD>{numero}</NumeroD>
-                    )
-                })}
+                    {numerosSorteios?.map((numero) => {
+                        return (
+                            <NumeroD>{numero}</NumeroD>
+                        )
+                    })}
                 </NumeroCads>
-                    
-                 
+
+
                 <LetraDeAviso>
                     Este sorteio é meramente ilustrativo
                     e não possui nenhuma ligação com a CAIXA.

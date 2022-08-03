@@ -111,11 +111,11 @@ const LotoFacil = () => {
             <div>
                 <PosicionandoBotao>
                     <select id="selecionar" onChange={selecionadoPage}>
-                    <option value="LotoFacil"> {loterias}</option>
-                         <option value="DiaDeSorte" > DiaDeSorte</option>
+                        <option value="LotoFacil"> {loterias}</option>
+                        <option value="DiaDeSorte" > DiaDeSorte</option>
                         <option value="MegaSena" > MegaSena</option>
                         <option value="Quina">Quina</option>
-                       
+
                         <option value="LotoMania"> LotoMania</option>
                         <option value="TimeMania"> TImeMania</option>
 

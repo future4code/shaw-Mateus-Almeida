@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import {ReactComponent as Logo} from '../Imagens/Sena.svg'
+import { ReactComponent as Logo } from '../Imagens/Sena.svg'
 //background-color: rgb(92, 173, 125);
-export const LogoStyled =styled(Logo)`
+export const LogoStyled = styled(Logo)`
 background-color: rgb(92, 173, 125);
 margin-left:40%;
 margin-top: 6%
 
 `
 
-export const MegaLetra =styled.h1`
+export const MegaLetra = styled.h1`
 background-color: rgb(92, 173, 125);
 margin-left:24%;
 margin-top: 1%;
@@ -19,7 +19,7 @@ size: 30px;
 color: white;
 `
 
- export const DivPai =styled.div`
+export const DivPai = styled.div`
  width: 100vw;
 height: 100vh;
 display: flex;
@@ -29,7 +29,7 @@ position: fixed; top: 0; left: 0;
 
 
 `
-export const PosicionandoBotao =styled.div`
+export const PosicionandoBotao = styled.div`
 
 display: flex;
 margin-left: 34%;
@@ -38,7 +38,7 @@ margin-top: 12%;
 background-color: rgb(92, 173, 125);
 
 `
-export const NumeroConcurso =styled.p`
+export const NumeroConcurso = styled.p`
 background-color: rgb(92, 173, 125);
 font-family: Montserrat;
 font-weight: 100;
@@ -50,7 +50,7 @@ margin-left: 23%;
 margin-top:-3%
 
 `
-export const DivOndeIraOsNumero =styled.div`
+export const DivOndeIraOsNumero = styled.div`
 background-color: rgb(239, 239, 239);
 width: 100vw;
 flex-grow: 1;
@@ -61,7 +61,7 @@ border-radius: 15% 15% 0%  0%;
 display: flex;
 `
 
-export const LetraDeAviso =styled.p`
+export const LetraDeAviso = styled.p`
 background-color: rgb(239, 239, 239);
 font-weight: 40;
 display: flex;
@@ -74,7 +74,7 @@ justify-content: end;
 
 
 `
-export const NumeroD =styled.div`
+export const NumeroD = styled.div`
 background-color: rgb(239, 239, 239);
 border-radius: 50%;
 display: flex;
@@ -87,7 +87,7 @@ justify-content: center;
  
 
 `
-export const NumeroCads =styled.div`
+export const NumeroCads = styled.div`
 display: flex;
 flex-wrap: wrap;
 justify-content: center;

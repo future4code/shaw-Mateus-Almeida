@@ -60,7 +60,7 @@ const Megasena = () => {
             .catch((err) => {
                 console.log(err);
             })
-      
+
     }, [])
     //--------------------------------------------------------------------------------
     //      console.log(loterias);
@@ -73,39 +73,39 @@ const Megasena = () => {
     useEffect(() => {
         axios.get('https://brainn-api-loterias.herokuapp.com/api/v1/loterias-concursos')
             .then((res) => {
-               // console.log(res.data);
+                // console.log(res.data);
                 setConcursoId(res.data[0].concursoId)
                 setidDoConcurso(res.data[0].loteriaId)
-               
+
 
             })
             .catch((err) => {
                 console.log(err);
             })
-      
+
     }, [])
     //----------------------------------------------------------------------------------   
-       // console.log(idDoConcurso);
-    
-    
-  //  console.log(concursoId);
+    // console.log(idDoConcurso);
+
+
+    //  console.log(concursoId);
 
 
 
     const [numerosSorteios, setNumerosSorteios] = useState()
     useEffect(() => {
-    axios.get(`https://brainn-api-loterias.herokuapp.com/api/v1/concursos/${concursoId}`)
-        .then((res) => {
-            setNumerosSorteios(res.data.numeros)
-            //console.log(res.data);
+        axios.get(`https://brainn-api-loterias.herokuapp.com/api/v1/concursos/${concursoId}`)
+            .then((res) => {
+                setNumerosSorteios(res.data.numeros)
+                //console.log(res.data);
 
-        })
-        .catch((err) => {
-            console.log(err);
-        })
-       
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+
     }, [concursoId])
-  //console.log(numerosSorteios);
+    //console.log(numerosSorteios);
 
 
     return (
@@ -129,20 +129,20 @@ const Megasena = () => {
             <LogoStyled />
             <MegaLetra>{loterias}</MegaLetra>
             <NumeroConcurso>Concurso Nº {concursoId}</NumeroConcurso>
-                 
 
-    
-                  
+
+
+
             <DivOndeIraOsNumero >
                 <NumeroCads>
-                {numerosSorteios ?.map((numero)=>{
-                    return(
-                        <NumeroD>{numero}</NumeroD>
-                    )
-                })}
+                    {numerosSorteios?.map((numero) => {
+                        return (
+                            <NumeroD>{numero}</NumeroD>
+                        )
+                    })}
                 </NumeroCads>
-                    
-                 
+
+
                 <LetraDeAviso>
                     Este sorteio é meramente ilustrativo
                     e não possui nenhuma ligação com a CAIXA.
